@@ -12,6 +12,24 @@ namespace eCommerce_videojuegos
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            CategoriaNegocio Categorias = new CategoriaNegocio();
+
+            try
+            {
+                if (!IsPostBack)
+                {
+                    IdCategorias.DataSource = Categorias.listar();
+                    IdCategorias.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+            }
+
+
+
+
         }
     }
 }
