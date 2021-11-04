@@ -10,7 +10,7 @@
 
 namespace eCommerce_videojuegos
 {
-    public partial class About
+    public partial class Contact
     {
     }
 }

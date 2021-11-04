@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace eCommerce_videojuegos
 {
-    public partial class Contact : Page
+    public partial class About : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Title = "SMG";
+            Title="Tienda";
         }
     }
 }
