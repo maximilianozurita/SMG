@@ -81,6 +81,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coneccion BD\Coneccion BD.csproj">
+      <Project>{07194375-7d44-4ec1-8ec6-081f56e56cdf}</Project>
+      <Name>Coneccion BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mod Dominio\Mod Dominio.csproj">
+      <Project>{de10b19b-52d2-4f07-9255-d2a1f435b05a}</Project>
+      <Name>Mod Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

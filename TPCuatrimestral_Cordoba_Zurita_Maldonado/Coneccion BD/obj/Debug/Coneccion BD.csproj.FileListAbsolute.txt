@@ -1,0 +1,9 @@
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Coneccion BD.dll
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Coneccion BD.pdb
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.dll
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.CopyComplete
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.dll
+C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.pdb
