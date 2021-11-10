@@ -7,8 +7,8 @@
     <ProjectGuid>{07194375-7D44-4EC1-8EC6-081F56E56CDF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Coneccion_BD</RootNamespace>
-    <AssemblyName>Coneccion BD</AssemblyName>
+    <RootNamespace>Conexion_BD</RootNamespace>
+    <AssemblyName>Conexion BD</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

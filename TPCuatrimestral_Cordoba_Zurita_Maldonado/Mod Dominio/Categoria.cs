@@ -9,7 +9,7 @@ namespace Mod_Dominio
     public class Categoria
     {
         public int Id { get; set; }
-        public string Nombre_cat { get; set; }
+        public string name { get; set; }
         public bool Estado { get; set; }
     }
 }

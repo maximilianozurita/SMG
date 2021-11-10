@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPCuatrimestral_Cordoba_Zur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mod Dominio", "Mod Dominio\Mod Dominio.csproj", "{DE10B19B-52D2-4F07-9255-D2A1F435B05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coneccion BD", "Coneccion BD\Coneccion BD.csproj", "{07194375-7D44-4EC1-8EC6-081F56E56CDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexion BD", "Coneccion BD\Conexion BD.csproj", "{07194375-7D44-4EC1-8EC6-081F56E56CDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

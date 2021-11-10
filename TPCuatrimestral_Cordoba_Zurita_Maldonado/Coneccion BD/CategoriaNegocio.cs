@@ -3,10 +3,107 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mod_Dominio;
 
-namespace Coneccion_BD
+namespace Negocio
 {
     public class CategoriaNegocio
     {
+
+       public List<Categoria> listar()
+       {
+           List<Categoria> lista = new List<Categoria>();
+           AccesoDatos datos = new AccesoDatos();
+           Categoria aux = new Categoria();
+           try
+           {
+               datos.SetearConsulta("Select id, name, Estado  from categories;");
+               datos.EjecutarLectura();
+               while (datos.Lector.Read())
+               {
+                    Categoria categoria = new Categoria();
+                    categoria.Id = (int)datos.Lector["id"];
+                    categoria.name = (string)datos.Lector["Descripcion"];
+
+                    lista.Add(categoria);
+               }
+               return lista;
+
+           }
+           catch (Exception ex)
+           {
+
+               throw ex;
+           }
+           finally
+           {
+               datos.CerrarConexion();
+           }
+
+
+       }
+       public void Agregar(Categoria nuevo)
+       {
+           AccesoDatos datos = new AccesoDatos();
+
+           try
+           {
+               datos.SetearConsulta("insert into Categorias (name, Estado) values ('" + nuevo.name + "','" + nuevo.Estado + "')");
+               datos.setearParametros("@Id", nuevo.Id);
+               datos.setearParametros("@Descripcion", nuevo.name);
+               datos.setearParametros("@Nombre", nuevo.Estado);
+               datos.EjecutarAccion();
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+           finally
+           {
+               datos.CerrarConexion();
+           }
+       }
+       public void Modificar(Categoria Modificar)
+       {
+           AccesoDatos datos = new AccesoDatos();
+           try
+           {
+               datos.SetearConsulta("update Categoria set name=@Nombre, Estado=@Estado where Id=@Id");
+               datos.setearParametros("@Id", Modificar.Id);
+               datos.setearParametros("@Descripcion", Modificar.name);
+               datos.setearParametros("@Estado", Modificar.Estado);
+               datos.EjecutarAccion();
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+           finally
+           {
+               datos.CerrarConexion();
+           }
+       }
+       public void Eliminar(Categoria Eliminar)
+       {
+           AccesoDatos datos = new AccesoDatos();
+
+           try
+           {
+               datos.SetearConsulta("DELETE FROM categories WHERE Id=@Id");
+               datos.setearParametros("@Id", Eliminar.Id);
+               datos.EjecutarAccion();
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+           finally
+           {
+               datos.CerrarConexion();
+           }
+
+       }
     }
 }

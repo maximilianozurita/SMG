@@ -4,3 +4,9 @@ C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\M
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\bin\Debug\Mod Dominio.pdb
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.dll
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.pdb
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\bin\Debug\Mod Dominio.dll
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\bin\Debug\Mod Dominio.pdb
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.csproj.CoreCompileInputs.cache
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.dll
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.pdb
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.csproj.AssemblyReference.cache

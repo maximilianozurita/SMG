@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 
 
-namespace Coneccion_BD
+namespace Negocio
 {
-    public class Acceso_Datos
+    public class AccesoDatos
     {
         private SqlConnection conexion;
         private SqlCommand comando;
@@ -18,7 +18,7 @@ namespace Coneccion_BD
             get { return lector; }
         }
 
-        public Acceso_Datos()
+        public AccesoDatos()
         {
             conexion = new SqlConnection("server=.\\SQLEXPRESS;database= SMG; integrated security=true");
             comando = new SqlCommand();
