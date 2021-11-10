@@ -7,3 +7,12 @@ C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\C
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.CopyComplete
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.dll
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.pdb
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Coneccion BD.dll
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Coneccion BD.pdb
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.dll
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.AssemblyReference.cache
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.CoreCompileInputs.cache
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.csproj.CopyComplete
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.dll
+C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Coneccion BD.pdb
