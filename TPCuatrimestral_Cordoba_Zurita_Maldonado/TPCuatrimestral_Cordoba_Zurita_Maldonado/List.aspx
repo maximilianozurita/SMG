@@ -19,16 +19,11 @@
                 Ofertas
               </label>
             </div>
+       
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="CheckCategoria">
               <label class="form-check-label" for="flexCheckDefault">
                 Cateogira1
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="form-check-label" for="flexCheckChecked">
-                Categoria2
               </label>
             </div>
         </div>

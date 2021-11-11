@@ -9,7 +9,11 @@ namespace Mod_Dominio
     public class Categoria
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
         public bool Estado { get; set; }
     }
 }

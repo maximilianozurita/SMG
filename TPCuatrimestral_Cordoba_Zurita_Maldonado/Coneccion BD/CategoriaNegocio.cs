@@ -10,7 +10,7 @@ namespace Negocio
     public class CategoriaNegocio
     {
 
-       public List<Categoria> listar()
+       public List<Categoria> Listar()
        {
            List<Categoria> lista = new List<Categoria>();
            AccesoDatos datos = new AccesoDatos();
@@ -23,7 +23,7 @@ namespace Negocio
                {
                     Categoria categoria = new Categoria();
                     categoria.Id = (int)datos.Lector["id"];
-                    categoria.name = (string)datos.Lector["Descripcion"];
+                    categoria.Name = (string)datos.Lector["name"];
 
                     lista.Add(categoria);
                }
@@ -48,9 +48,9 @@ namespace Negocio
 
            try
            {
-               datos.SetearConsulta("insert into Categorias (name, Estado) values ('" + nuevo.name + "','" + nuevo.Estado + "')");
+               datos.SetearConsulta("insert into Categorias (name, Estado) values ('" + nuevo.Name + "','" + nuevo.Estado + "')");
                datos.setearParametros("@Id", nuevo.Id);
-               datos.setearParametros("@Descripcion", nuevo.name);
+               datos.setearParametros("@Descripcion", nuevo.Name);
                datos.setearParametros("@Nombre", nuevo.Estado);
                datos.EjecutarAccion();
            }
@@ -70,7 +70,7 @@ namespace Negocio
            {
                datos.SetearConsulta("update Categoria set name=@Nombre, Estado=@Estado where Id=@Id");
                datos.setearParametros("@Id", Modificar.Id);
-               datos.setearParametros("@Descripcion", Modificar.name);
+               datos.setearParametros("@Descripcion", Modificar.Name);
                datos.setearParametros("@Estado", Modificar.Estado);
                datos.EjecutarAccion();
 

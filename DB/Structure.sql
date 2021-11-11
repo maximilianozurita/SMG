@@ -4,7 +4,7 @@ use SMG;
 go
 Create table users(
 id int not null primary key IDENTITY(1,1),
-nombre varChar(50) not null,
+name varChar(50) not null,
 lastName varChar (50) not null,
 email varChar (60) not null unique,
 password varchar(100),

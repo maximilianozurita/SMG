@@ -47,16 +47,13 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias
                                 </a>
+
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <% foreach (var item in ListaCategoria)
+                                        { %>
+                                    <li><a class="dropdown-item" href="#"><%=item.Name %></a></li>
+                                    <%} %>
                                 </ul>
-
-                                <asp:DropDownList CssClass="dropdown-menu" ID="DropDownClasificacion" runat="server">
-                                    <asp:ListItem Text="text1" />
-                                </asp:DropDownList>
-                            </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="List.aspx">Ofertas</a>
                             </li>

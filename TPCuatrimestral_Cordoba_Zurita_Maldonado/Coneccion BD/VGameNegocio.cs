@@ -136,7 +136,7 @@ namespace Negocio
                     
                 aux.Categoria = new Categoria
                 {
-                    name = (string)datos.Lector["Categorias"]
+                    Name = (string)datos.Lector["Categorias"]
                 };
                 aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
 
