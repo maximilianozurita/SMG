@@ -5,7 +5,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    <div class="row container">
         <div class="col-3"></div>
         <div class="col">
             <div class="mb-3">
@@ -22,7 +22,6 @@
                 <button type="reset" class="btn btn-primary">Cancelar</button>
                 <asp:Button Text="Iniciar sesión" CssClass="btn btn-primary" ID="ButtonAceptar" OnClick="btnAceptarClick" runat="server" />
             </div>
-
         </div>
         <div class="col-3"></div>
 

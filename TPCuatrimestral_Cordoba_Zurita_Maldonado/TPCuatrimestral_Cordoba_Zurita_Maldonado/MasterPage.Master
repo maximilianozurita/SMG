@@ -14,20 +14,23 @@
 <body>
     <form id="form1" runat="server">
         <header class="align-content-center">
-            <div class="row">
+            <%--Top buttons--%>
+            <div class="row container-fluid">
                 <div class="col justify-content-start">
                     <a class="navbar-brand" href="/">LOGO</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                 </div>
                 <div class="col justify-content-end">
-                    <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Login</a>
-                    <a href="#" type="button" class="btn btn-outline-primary">Login</a>
+                    <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar sesion</a>
+                    <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Registrase</a>
                 </div>
             </div>
+
+            <%--navBar--%>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container-xl justify-content-center">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex col-4">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -39,10 +42,10 @@
                                 <a class="nav-link active" aria-current="page" href="/" runat="server">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Tienda</a>
+                                <a class="nav-link" href="List.aspx">Tienda</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -50,16 +53,16 @@
                                 </ul>
 
                                 <asp:DropDownList CssClass="dropdown-menu" ID="DropDownClasificacion" runat="server">
-                                <asp:ListItem Text="text1" />
+                                    <asp:ListItem Text="text1" />
                                 </asp:DropDownList>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ofertas</a>
+                                <a class="nav-link" href="List.aspx">Ofertas</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Nuevos Lanzamientos</a>
+                                <a class="nav-link" href="List.aspx">Nuevos Lanzamientos</a>
                             </li>
                         </ul>
 

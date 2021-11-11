@@ -185,4 +185,3 @@ C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPC
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Conexion BD.pdb
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Mod Dominio.pdb
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\obj\Debug\TPCuatrimestral_Cordoba_Zurita_Maldonado.csproj.CopyComplete
