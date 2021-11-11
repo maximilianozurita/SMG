@@ -6,4 +6,3 @@ C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Con
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
 C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
-C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete

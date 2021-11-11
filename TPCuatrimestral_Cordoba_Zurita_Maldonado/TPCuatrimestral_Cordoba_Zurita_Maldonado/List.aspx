@@ -37,102 +37,26 @@
 
                 <div class="row">
 
+                    <%foreach (var item in ListaVideogames)
+                        { %>
+
                     <div class="col-lg-4">
                         <div class="card mx-2 mb-4">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
+                            <img src="/images/product/EFT.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h5 class="card-title"> <%=item.Name %></h5>
+                                <p class="card-text"><%=item.Description %></p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
+                                <small class="text-muted"> $ <%=item.Price %> </small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4"">
-                        <div class="card mx-2 mb-4">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card mx-2 mb-4"">
-                            <img src="/images/EFT.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
+
+                    <%} %>
+
+
+                     
                 </div>
             </section>
         </div>

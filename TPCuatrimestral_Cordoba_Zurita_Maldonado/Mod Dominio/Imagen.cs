@@ -10,6 +10,7 @@ namespace Mod_Dominio
     {
         public int ID { get; set; }
         public string urlImagen { get; set; }
+        public string idProducto { get; set; }
 
         public bool Estado { get; set; }
     }
