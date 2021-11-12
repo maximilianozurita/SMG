@@ -9,6 +9,56 @@ namespace Negocio
 {
     public class UsuarioNegocio
     {
+        public List<Usuario> listar()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+            Usuario aux = new Usuario();
+            try
+            {
+                datos.SetearConsulta("Select id, nombre, lastname, email, cell, Fecha_nacimiento, Estado from users");
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
+
+                    lista.Add(aux);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+
+        }
+        public Usuario Asignacion(AccesoDatos datos)
+        {
+
+            try
+            {
+                Usuario aux = new Usuario();
+                aux.ID = (int)datos.Lector["Id"];
+                aux.Nombre = (string)datos.Lector["Nombre"];
+                aux.Apellido = (string)datos.Lector["lastname"];
+                aux.Email = (string)datos.Lector["email"];
+                aux.Celular = (string)datos.Lector["cell"];
+                aux.FechaNacimiento = (DateTime)datos.Lector["Fecha_nacimento"];
+                aux.Estado = (bool)datos.Lector["Estado"];
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void Agregar(Usuario nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
