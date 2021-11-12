@@ -4,43 +4,43 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-    <div class="row g-2">
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Registrarse</button>
-        </div>
+    <div class="col-md-4">
+        <label for="txtNombre" class="form-label">Nombre</label>
+        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
     </div>
 
+
+    <div class="col-md-4">
+        <label for="txtApellido" class="form-label">Apellido</label>
+        <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" />
+    </div>
+
+    <div class="col-md-4">
+        <label for="txtCelular" class="form-label">Celular</label>
+        <asp:TextBox runat="server" ID="txtCelular" CssClass="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="txtEmail" class="form-label">Correo Electronico (Nombre de Usuario) </label>
+        <asp:TextBox runat="server" ID="txtEmail" type="email" CssClass="form-control" placeholder="name@example.com" />
+    </div>
+
+    
+    <div class="col-md-4">
+        <label for="txtContraseña" class="form-label">Contraseña</label>
+        <asp:TextBox runat="server" ID="txtContraseña" CssClass="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Ingrese una foto (opcional)</label>
+        <input class="form-control" type="file" id="formFile">
+    </div>
+
+
+    <div class="col-12">
+        <asp:Button Text="Crear Cuenta" CssClass="btn btn-primary" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click" runat="server" />
+    </div>
 
 </asp:Content>

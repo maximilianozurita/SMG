@@ -16,6 +16,7 @@ namespace Mod_Dominio
 
         public string Celular { get; set; }
         public string Imagen { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public bool Estado { get; set; }
 
