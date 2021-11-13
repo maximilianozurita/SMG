@@ -46,6 +46,7 @@
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="DevelopersNegocio.cs" />
     <Compile Include="ImagenNegocio.cs" />
+    <Compile Include="LoginUsuarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioNegocio.cs" />
     <Compile Include="VGameNegocio.cs" />
