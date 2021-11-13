@@ -9,16 +9,12 @@
         <div class="col-3"></div>
         <div class="col">
             <div class="mb-3">
-                <asp:TextBox runat="server" type="email" CssClass="form-control" ID="ImputEmail" aria-describedby="exampleInputEmail1" placeholder="Email" />
+                <asp:TextBox runat="server" type="email" CssClass="form-control" ID="txtEmail" aria-describedby="exampleInputEmail1" placeholder="Email" />
             </div>
             <div class="mb-3">
-                <asp:TextBox runat="server" type="password" CssClass="form-control" ID="exampleInputPassword1" aria-describedby="exampleInputPassword1" placeholder="Password" />
+                <asp:TextBox runat="server" type="password" CssClass="form-control" ID="txtContraseña" aria-describedby="exampleInputPassword1" placeholder="Password" />
             </div>
             <div class="container justify-content-center align-content-center">
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Mantener la sesión iniciada</label>
-                </div>
                 <button type="reset" class="btn btn-primary">Cancelar</button>
                 <asp:Button Text="Iniciar sesión" CssClass="btn btn-primary" ID="ButtonAceptar" OnClick="btnAceptarClick" runat="server" />
             </div>
