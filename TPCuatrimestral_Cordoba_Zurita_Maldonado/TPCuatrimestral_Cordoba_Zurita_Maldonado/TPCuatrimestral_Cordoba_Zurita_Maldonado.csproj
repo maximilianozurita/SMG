@@ -72,6 +72,7 @@
     <Content Include="ListOfProduct.aspx" />
     <Content Include="ListOfUser.aspx" />
     <Content Include="ModProduct.aspx" />
+    <Content Include="OpcionAdmin.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="ModProduct.aspx.designer.cs">
       <DependentUpon>ModProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionAdmin.aspx.cs">
+      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpcionAdmin.aspx.designer.cs">
+      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
