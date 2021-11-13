@@ -46,18 +46,19 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) values ('"+ nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+nuevo.Categoria.Id+","+nuevo.Developer.ID+","+nuevo.Price+","+nuevo.Descuento+","+nuevo.Destacado+","+nuevo.ClasificaconPGI+","+nuevo.LaunchDate+");");
+                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) values ('"+ nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+1+","+1+","+nuevo.Price+","+nuevo.Descuento+","+ BoolToInt(nuevo.Destacado) + ","+nuevo.ClasificaconPGI+",'"+ nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
+
                 datos.setearParametros("@Id", nuevo.ID);
                 datos.setearParametros("@Nombre", nuevo.Name);
                 datos.setearParametros("@Descripcion", nuevo.Description);
                 datos.setearParametros("@Requerimentos", nuevo.Requerimentos);
                 datos.setearParametros("@Precio", nuevo.Price);
                 datos.setearParametros("@Descuento", nuevo.Descuento);
-                datos.setearParametros("@PDestacado", nuevo.Destacado);
+                datos.setearParametros("@PDestacado", BoolToInt(nuevo.Destacado));
                 datos.setearParametros("@Clasificacon_PGI", nuevo.ClasificaconPGI);
-                datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
-                datos.setearParametros("@IdDeveloper", nuevo.Developer.ID);
-                datos.setearParametros("@IdDeveloper", nuevo.LaunchDate);
+                datos.setearParametros("@IdCategoria", 1);
+                datos.setearParametros("@IdDeveloper", 1);
+                datos.setearParametros("@LaunchDate", nuevo.LaunchDate.Year+"-"+nuevo.LaunchDate.Month+"-"+ nuevo.LaunchDate.Day);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -81,11 +82,11 @@ namespace Negocio
                 datos.setearParametros("@Requerimentos", Modificar.Requerimentos);
                 datos.setearParametros("@Precio", Modificar.Price);
                 datos.setearParametros("@Descuento", Modificar.Descuento);
-                datos.setearParametros("@PDestacado", Modificar.Destacado);
+                datos.setearParametros("@PDestacado", BoolToInt(Modificar.Destacado) );
                 datos.setearParametros("@Clasificacon_PGI", Modificar.ClasificaconPGI);
                 datos.setearParametros("@IdCategoria", Modificar.Categoria.Id);
                 datos.setearParametros("@IdDeveloper", Modificar.Developer.ID);
-                datos.setearParametros("@IdDeveloper", Modificar.LaunchDate);
+                datos.setearParametros("@LaunchDate", Modificar.LaunchDate);
                 datos.EjecutarAccion();
 
             }
@@ -160,7 +161,15 @@ namespace Negocio
             }
         }
 
-
+        public int BoolToInt(bool value)
+        {
+            int OutValue=0;
+            if (value)
+            {
+                OutValue = 1;
+            }
+            return OutValue;
+        }
 
     }
 }

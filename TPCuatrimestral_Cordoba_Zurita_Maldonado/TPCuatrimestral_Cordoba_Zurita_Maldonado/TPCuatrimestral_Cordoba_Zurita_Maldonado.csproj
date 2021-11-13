@@ -70,6 +70,7 @@
     <Content Include="Default.aspx" />
     <Content Include="ListOfProduct.aspx" />
     <Content Include="ListOfUser.aspx" />
+    <Content Include="ModProduct.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="ListOfUser.aspx.designer.cs">
       <DependentUpon>ListOfUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModProduct.aspx.cs">
+      <DependentUpon>ModProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModProduct.aspx.designer.cs">
+      <DependentUpon>ModProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
