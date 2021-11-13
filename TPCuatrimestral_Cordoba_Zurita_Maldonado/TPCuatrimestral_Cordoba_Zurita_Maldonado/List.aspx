@@ -7,27 +7,32 @@
     <div class="row">
         <%--checkbox--%>
         <div class="col-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="CheckLanzamientos">
-              <label class="form-check-label" for="flexCheckDefault">
-                Nuevos Lanzamientos
-              </label>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" value="NuevosLanzamientos" id="CheckLanzamientos">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Nuevos
+                </label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="CheckOfertas">
-              <label class="form-check-label" for="flexCheckDefault">
-                Ofertas
-              </label>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" value="Ofertas" id="CheckOfertas">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Ofertas
+                </label>
             </div>
-       
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="CheckCategoria">
-              <label class="form-check-label" for="flexCheckDefault">
-                Cateogira1
-              </label>
+
+            <%--categorias--%>
+            <% foreach (var item in ListaCategorias)
+                { %>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" value="<%=item.Id %>" id="CheckCategoria<%=item.Id %>">
+                <label class="form-check-label" for="flexCheckDefault">
+                    <%=item.Name %>
+                </label>
+
             </div>
+            <%} %>
         </div>
-        
+
         <%--container videojuegos--%>
         <div class="col-9">
             <section id="galeria" class="container">
@@ -41,24 +46,23 @@
                         { %>
 
                     <div class="col-lg-4">
-                        <div class="card mx-2 mb-4">
-                            <img src="/images/product/EFT.png" class="card-img-top" alt="...">
+                        <a href="/ProductDetail.aspx" class="card mx-2 mb-4 text-decoration-none text-reset">
+                            <img src="/images/product/EFT.png" class="card-img-top" alt="..">
                             <div class="card-body">
-                                <h5 class="card-title"> <%=item.Name %></h5>
+                                <h5 class="card-title"><%=item.Name %></h5>
                                 <p class="card-text"><%=item.Description %></p>
+                                <small class="text-muted">fecha de lanzamiento:<%=item.LaunchDate.Day%>/<%=item.LaunchDate.Month%>/<%=item.LaunchDate.Year %></small>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted"> $ <%=item.Price %> </small>
+                            <div class="card-footer text-lg-center">
+                                <small class="text-muted m-1">$<%=item.Price %></small>
+                                <small class="text-muted m-1">Descuento: <%=item.Descuento*100 %>%</small>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <%} %>
-
-
-                     
                 </div>
             </section>
         </div>
-     </div>
+    </div>
 </asp:Content>

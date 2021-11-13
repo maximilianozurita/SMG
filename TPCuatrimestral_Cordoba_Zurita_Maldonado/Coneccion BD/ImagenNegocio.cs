@@ -8,7 +8,7 @@ namespace Negocio
 {
     public class ImagenNegocio
     {
-        public List<Imagen> listar()
+        public List<Imagen> Listar()
         {
             List<Imagen> lista = new List<Imagen>();
             AccesoDatos datos = new AccesoDatos();

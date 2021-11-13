@@ -8,32 +8,38 @@
     <div class="row mx-4 mt-3">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+                <% int j = 0;
+                    foreach (var item in ListaVideogames)
+                    {
+                        if (item.Destacado == true)
+                        {
+                %>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%=j %>" aria-label="Slide <%=j+1 %>" <%= j==0? "class='active' aria-current='true'":"" %>></button>
+                <%j++;
+                        }
+                    } %>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/images/EFT.png" class="d-block w-100" alt="...">
+                <%int i = 0;
+                    foreach (var item in ListaVideogames)
+                    {
+                        if (item.Destacado == true)
+                        {
+                %>
+
+                <div class="carousel-item <%= i==0?"active":"" %>">
+                    <img src="/images/product/EFT.png" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5><%=item.Name %></h5>
+                        <p><%=item.Description%></p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/images/DoomEternal.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/images/GOW.jpeg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+
+                <%i++;
+                        }
+
+                    }%>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -50,76 +56,58 @@
     <div class="row mx-4 mt-5">
         <h2>Ofertas</h2>
         <div class="card-group">
-            <div class="card mx-2">
-                <img src="/images/EFT.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+            <% foreach (var item in ListaVideogames)
+                {
+                    if (item.Descuento != 0)
+                    {
+            %>
+            <div class="col-lg-4">
+                <a href="/ProductDetail.aspx" class="card mx-2 text-decoration-none text-reset">
+                    <img src="/images/product/EFT.png" class="card-img-top" alt="..">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=item.Name %></h5>
+                        <p class="card-text"><%=item.Description %></p>
+                        <small class="text-muted">fecha de lanzamiento:<%=item.LaunchDate.Day%>/<%=item.LaunchDate.Month%>/<%=item.LaunchDate.Year %></small>
+                    </div>
+                    <div class="card-footer text-lg-center">
+                        <small class="text-muted m-1">$<%=item.Price %></small>
+                        <small class="text-muted m-1">Descuento: <%=item.Descuento*100 %>%</small>
+                    </div>
+                </a>
             </div>
-            <div class="card mx-2">
-                <img src="/images/DoomEternal.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-            <div class="card mx-2">
-                <img src="/images/GOW.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+
+            <%}
+                } %>
         </div>
     </div>
+
     <%-- NUEVOS LANZAMIENTOS --%>
     <div class="row mx-4 mt-5">
         <h2>Nuevos lanzamientos</h2>
         <div class="card-group">
-            <div class="card mx-2">
-                <img src="/images/EFT.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+
+            <% foreach (var item in ListaVideogames)
+                {
+                    if (DateTime.Today.DayOfYear - item.LaunchDate.DayOfYear < 15 && item.LaunchDate.Year == DateTime.Today.Year)
+                    {
+            %>
+            <div class="col-lg-4">
+                <a href="/ProductDetail.aspx" class="card mx-2 text-decoration-none text-reset">
+                    <img src="/images/product/EFT.png" class="card-img-top" alt="..">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=item.Name %></h5>
+                        <p class="card-text"><%=item.Description %></p>
+                        <small class="text-muted">fecha de lanzamiento:<%=item.LaunchDate.Day%>/<%=item.LaunchDate.Month%>/<%=item.LaunchDate.Year %></small>
+                    </div>
+                    <div class="card-footer text-lg-center">
+                        <small class="text-muted m-1">$<%=item.Price %></small>
+                        <small class="text-muted m-1">Descuento: <%=item.Descuento*100 %>%</small>
+                    </div>
+                </a>
             </div>
-            <div class="card mx-2">
-                <img src="/images/DoomEternal.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
-            <div class="card mx-2">
-                <img src="/images/GOW.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            </div>
+            <%}
+                } %>
         </div>
     </div>
-
-
-
 
 </asp:Content>

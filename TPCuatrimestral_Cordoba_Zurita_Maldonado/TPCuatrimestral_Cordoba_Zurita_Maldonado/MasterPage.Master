@@ -20,6 +20,9 @@
                     <a class="navbar-brand" href="/">LOGO</a>
                 </div>
                 <div class="col justify-content-end">
+                    <a href="/ListOfUser.aspx" type="button" class="btn btn-outline-primary">Lista de usuarios</a>
+                    <a href="/ListOfProduct.aspx" type="button" class="btn btn-outline-primary">Lista de productos</a>
+
                     <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar sesion</a>
                     <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Registrase</a>
                 </div>

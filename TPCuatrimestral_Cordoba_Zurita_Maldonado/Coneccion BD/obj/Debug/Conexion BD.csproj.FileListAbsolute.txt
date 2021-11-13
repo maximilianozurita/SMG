@@ -14,3 +14,4 @@ D:\Users\tobio\Desktop\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion B
 D:\Users\tobio\Desktop\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CoreCompileInputs.cache
 D:\Users\tobio\Desktop\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
 D:\Users\tobio\Desktop\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete

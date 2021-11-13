@@ -68,8 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="ListOfProduct.aspx" />
+    <Content Include="ListOfUser.aspx" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ProductCreate.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -80,6 +84,27 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfProduct.aspx.cs">
+      <DependentUpon>ListOfProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListOfProduct.aspx.designer.cs">
+      <DependentUpon>ListOfProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfUser.aspx.cs">
+      <DependentUpon>ListOfUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListOfUser.aspx.designer.cs">
+      <DependentUpon>ListOfUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="List.aspx.cs">
       <DependentUpon>List.aspx</DependentUpon>
@@ -101,6 +126,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCreate.aspx.cs">
+      <DependentUpon>ProductCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductCreate.aspx.designer.cs">
+      <DependentUpon>ProductCreate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrarse.aspx.cs">
