@@ -30,7 +30,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     Session.Add("email", loginUsuario);
                     if ((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin)
                     {
-                        Response.Redirect("OpcionAdmin.aspx", false);
+                        Response.Redirect("Default.aspx", false);
                     }
                     else
                     {
