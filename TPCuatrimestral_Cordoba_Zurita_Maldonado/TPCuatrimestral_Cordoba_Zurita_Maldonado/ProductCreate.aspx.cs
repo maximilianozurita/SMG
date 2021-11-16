@@ -26,7 +26,8 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     DropdCategoria.DataSource= categoria.Listar();
                     DropdCategoria.DataBind();
 
-                    //DropdDeveloper.DataSource = developers.Listar();
+                    DropdDeveloper.DataSource = developers.Listar();
+                    DropdDeveloper.DataBind();
 
                 }
             }
