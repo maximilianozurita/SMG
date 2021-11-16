@@ -11,34 +11,34 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
 
 
-    public partial class MasterPage
+    public partial class OpcionAdmin
     {
 
         /// <summary>
-        /// Control head.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
 
         /// <summary>
-        /// Control form1.
+        /// Control btnCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnCliente;
 
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control btnAdministrador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnAdministrador;
     }
 }

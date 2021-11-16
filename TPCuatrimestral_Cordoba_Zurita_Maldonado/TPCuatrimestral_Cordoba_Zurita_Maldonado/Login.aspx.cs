@@ -27,14 +27,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
                 if (negocio.Loguear(loginUsuario))
                 {
-                    if (Session["email"] != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin)
+                    Session.Add("email", loginUsuario);
+                    if ((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin)
                     {
-                        Session.Add("email", loginUsuario);
-                        Response.Redirect("OpcionAdmin.aspx", false);
+                        Response.Redirect("Default.aspx", false);
                     }
                     else
                     {
-                        Session.Add("email", loginUsuario);
                         Response.Redirect("Default.aspx", false);
                     }
                 }
