@@ -44,6 +44,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             VideoGame videogame = new VideoGame();
             VGameNegocio videoGameNegocio = new VGameNegocio();
 
+            Imagen imagen = new Imagen();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
             try
             {
                 videogame.Name = inputNombre.Text;
@@ -58,6 +61,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Destacado = CheckDestacado.Checked;
 
                 videoGameNegocio.Agregar(videogame);
+
+                Response.Redirect("ListOfProduct.aspx", false);
+
             }
             catch (Exception)
             {

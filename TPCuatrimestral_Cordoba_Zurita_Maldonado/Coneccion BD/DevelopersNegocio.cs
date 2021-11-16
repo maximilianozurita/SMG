@@ -55,6 +55,7 @@ namespace Negocio
                 datos.setearParametros("@Descripcion", nuevo.Information);
                 datos.setearParametros("@Nombre", nuevo.Estado);
                 datos.EjecutarAccion();
+
             }
             catch (Exception ex)
             {

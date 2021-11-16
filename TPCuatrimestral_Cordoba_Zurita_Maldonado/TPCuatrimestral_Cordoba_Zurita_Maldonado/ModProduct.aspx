@@ -83,7 +83,7 @@
     </div>
 
     <div class="col-12">
-        <asp:Button Text="Crear" CssClass="btn btn-primary" ID="btnCrearProducto" OnClick="btnCrearProducto_Click" runat="server" />
+        <asp:Button Text="Modificar producto" CssClass="btn btn-primary" ID="btnCrearProducto" OnClick="btnCrearProducto_Click" runat="server" />
     </div>
 
 

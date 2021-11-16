@@ -54,7 +54,7 @@
                         { %>
 
                     <div class="col-lg-4">
-                        <a href="/ModProduct.aspx" class="card mx-2 mb-4 text-decoration-none text-reset">
+                        <a href="/ModProduct.aspx?id=<%=item.ID %>" class="card mx-2 mb-4 text-decoration-none text-reset">
                             <img src="/images/product/EFT.png" class="card-img-top" alt="..">
                             <div class="card-body">
                                 <h5 class="card-title"><%=item.Name %></h5>

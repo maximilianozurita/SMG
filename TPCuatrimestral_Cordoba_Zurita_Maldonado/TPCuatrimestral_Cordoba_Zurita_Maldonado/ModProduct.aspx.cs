@@ -14,10 +14,18 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         public List<Categoria> ListaCategoria { get; set; }
         public List<Developers> ListaDevelopers { get; set; }
+
+        public VideoGame videogame = new VideoGame();
         protected void Page_Load(object sender, EventArgs e)
         {
             CategoriaNegocio categoria = new CategoriaNegocio();
             DevelopersNegocio developers = new DevelopersNegocio();
+
+            VGameNegocio vGame = new VGameNegocio();
+
+            int ProductID = int.Parse(Request.QueryString["ID"].ToString());
+
+            videogame = vGame.FindByFK(ProductID);
 
             try
             {
@@ -26,7 +34,20 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     DropdCategoria.DataSource = categoria.Listar();
                     DropdCategoria.DataBind();
 
-                    //DropdDeveloper.DataSource = developers.Listar();
+                    DropdDeveloper.DataSource = developers.Listar();
+                    DropdDeveloper.DataBind();
+
+                    inputNombre.Text = videogame.Name;
+                    inputDescripcion.Text = videogame.Description;
+                    inputRequerimiento.Text = videogame.Requerimentos;
+                    inputClasificacion.Text = videogame.ClasificaconPGI.ToString();
+                    inputPrecio.Text = videogame.Price.ToString();
+                    inputDescuento.Text = videogame.Descuento.ToString();
+                    inputFechaLanzamiento.Text = videogame.LaunchDate.ToString();
+                    //DropdCategoria.SelectedValue = videogame.Categoria.Name;
+                    //DropdDeveloper.DataValueField = videogame.Developer.Name;
+
+                    
 
                 }
             }
@@ -43,8 +64,11 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             VideoGame videogame = new VideoGame();
             VGameNegocio videoGameNegocio = new VGameNegocio();
 
+            int ProductID = int.Parse(Request.QueryString["ID"].ToString());
+
             try
             {
+                videogame.ID = ProductID;
                 videogame.Name = inputNombre.Text;
                 videogame.Description = inputDescripcion.Text;
                 videogame.Requerimentos = inputRequerimiento.Text;
@@ -57,6 +81,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Destacado = CheckDestacado.Checked;
 
                 videoGameNegocio.Modificar(videogame);
+                Response.Redirect("ListOfProduct.aspx", false);
             }
             catch (Exception)
             {

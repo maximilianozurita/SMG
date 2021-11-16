@@ -40,6 +40,36 @@ namespace Negocio
 
 
         }
+
+        public VideoGame FindByFK(int ID)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=@Id and v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id");
+                datos.setearParametros("@Id", ID);
+                datos.EjecutarLectura();
+                datos.Lector.Read();
+                VideoGame aux = Asignacion(datos);
+
+                return aux;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+
+        }
+
+
         public void Agregar(VideoGame nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -75,18 +105,18 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("update videoGames set name=@Nombre, Description=@Descripcion,Requerimientos=@Requerimientos,Precio=@Precio,Descuento=@Descuento, Destacado=@Destacado, Clasificacion_PIG=@Clasificacion_PGI, Id_category=@IdCategoria, Id_developer=@IdDeveloper where Id=@Id");
+                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category =1, Id_developer=1, Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
                 datos.setearParametros("@Id", Modificar.ID);
-                datos.setearParametros("@Nombre", Modificar.Name);
-                datos.setearParametros("@Descripcion", Modificar.Description);
-                datos.setearParametros("@Requerimentos", Modificar.Requerimentos);
-                datos.setearParametros("@Precio", Modificar.Price);
+                datos.setearParametros("@name", Modificar.Name);
+                datos.setearParametros("@Description", Modificar.Description);
+                datos.setearParametros("@Requerimientos", Modificar.Requerimentos);
+                datos.setearParametros("@Price", Modificar.Price);
                 datos.setearParametros("@Descuento", Modificar.Descuento);
                 datos.setearParametros("@PDestacado", BoolToInt(Modificar.Destacado) );
                 datos.setearParametros("@Clasificacon_PGI", Modificar.ClasificaconPGI);
-                datos.setearParametros("@IdCategoria", Modificar.Categoria.Id);
-                datos.setearParametros("@IdDeveloper", Modificar.Developer.ID);
-                datos.setearParametros("@LaunchDate", Modificar.LaunchDate);
+                datos.setearParametros("@IdCategoria", 1);
+                datos.setearParametros("@IdDeveloper", 1);
+                datos.setearParametros("@Launch_Date", Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day);
                 datos.EjecutarAccion();
 
             }
