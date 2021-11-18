@@ -29,10 +29,10 @@
                 %>
 
                 <div class="carousel-item <%= i==0?"active":"" %>">
-                    <img src="/images/product/EFT.png" class="d-block w-100" alt="...">
+                    <img src="/images/product/EFT.PNG" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5><%=item.Name %></h5>
-                        <p><%=item.Description%></p>
+                        <p><%=item.Description%></p>m
                     </div>
                 </div>
 

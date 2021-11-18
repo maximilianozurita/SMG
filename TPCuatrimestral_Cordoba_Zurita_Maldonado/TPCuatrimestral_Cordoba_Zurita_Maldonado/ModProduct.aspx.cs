@@ -43,7 +43,8 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     inputClasificacion.Text = videogame.ClasificaconPGI.ToString();
                     inputPrecio.Text = videogame.Price.ToString();
                     inputDescuento.Text = videogame.Descuento.ToString();
-                    inputFechaLanzamiento.Text = videogame.LaunchDate.ToString();
+                    inputFechaLanzamiento.Text = videogame.LaunchDate.ToString("yyyy-MM-dd");
+
                     //DropdCategoria.SelectedValue = videogame.Categoria.Name;
                     //DropdDeveloper.DataValueField = videogame.Developer.Name;
 
