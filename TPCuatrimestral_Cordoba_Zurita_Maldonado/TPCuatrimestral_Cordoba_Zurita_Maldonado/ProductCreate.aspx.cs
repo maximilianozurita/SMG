@@ -24,9 +24,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 if (!IsPostBack)
                 {
                     DropdCategoria.DataSource= categoria.Listar();
+                    DropdCategoria.DataTextField = "Name";
+                    DropdCategoria.DataValueField = "Id";
                     DropdCategoria.DataBind();
 
                     DropdDeveloper.DataSource = developers.Listar();
+                    DropdDeveloper.DataTextField = "Name";
+                    DropdDeveloper.DataValueField = "ID";
                     DropdDeveloper.DataBind();
 
                 }
@@ -56,9 +60,20 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Price =(float)decimal.Parse(inputPrecio.Text);
                 videogame.Descuento=(float)decimal.Parse(inputDescuento.Text);
                 videogame.LaunchDate= DateTime.Parse(inputFechaLanzamiento.Text);
-                //videogame.Categoria.Id = 1;
-                //videogame.Developer.ID = 1;
                 videogame.Destacado = CheckDestacado.Checked;
+
+                videogame.Categoria = new Categoria
+                {
+                    Id = int.Parse(DropdCategoria.SelectedItem.Value),
+                    Name = (string)DropdCategoria.SelectedItem.Text,
+                };
+
+                videogame.Developer = new Developers
+                {
+                    ID = int.Parse(DropdDeveloper.SelectedItem.Value),
+                    Name = (string)DropdDeveloper.SelectedItem.Text,
+                };
+
 
                 videoGameNegocio.Agregar(videogame);
 

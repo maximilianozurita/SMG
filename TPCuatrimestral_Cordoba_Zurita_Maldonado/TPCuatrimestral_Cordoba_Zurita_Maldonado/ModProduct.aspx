@@ -75,7 +75,7 @@
                 <div class="col-12">
                     <div class="form-check">
                         <label for="inputDestacado" class="form-label">Destacado</label>
-                        <asp:CheckBox runat="server" CssClass="form-check-label" ID="CheckDestacado" for="gridCheck" placeholder=""/>
+                        <asp:CheckBox runat="server" CssClass="form-check-label" ID="CheckDestacado" for="gridCheck"/>
                     </div>
                 </div>
             </div>
