@@ -56,7 +56,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Price =(float)decimal.Parse(inputPrecio.Text);
                 videogame.Descuento=(float)decimal.Parse(inputDescuento.Text);
                 videogame.LaunchDate= DateTime.Parse(inputFechaLanzamiento.Text);
-                //videogame.Categoria.Id = 1 ;
+                //videogame.Categoria.Id = 1;
                 //videogame.Developer.ID = 1;
                 videogame.Destacado = CheckDestacado.Checked;
 

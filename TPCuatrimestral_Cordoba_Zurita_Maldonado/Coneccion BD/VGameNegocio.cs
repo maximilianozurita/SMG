@@ -17,7 +17,7 @@ namespace Negocio
             VideoGame aux = new VideoGame();
             try
             {
-                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id");
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id;");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -47,7 +47,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=@Id and v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id");
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=@Id and v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id");
                 datos.setearParametros("@Id", ID);
                 datos.EjecutarLectura();
                 datos.Lector.Read();
@@ -105,7 +105,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category =1, Id_developer=1, Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
+                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category ="+ Modificar.Categoria.Id+ ", Id_developer="+ Modificar.Developer.ID + ", Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
                 datos.setearParametros("@Id", Modificar.ID);
                 datos.setearParametros("@name", Modificar.Name);
                 datos.setearParametros("@Description", Modificar.Description);
@@ -114,8 +114,8 @@ namespace Negocio
                 datos.setearParametros("@Descuento", Modificar.Descuento);
                 datos.setearParametros("@PDestacado", BoolToInt(Modificar.Destacado) );
                 datos.setearParametros("@Clasificacon_PGI", Modificar.ClasificaconPGI);
-                datos.setearParametros("@IdCategoria", 1);
-                datos.setearParametros("@IdDeveloper", 1);
+                datos.setearParametros("@IdCategoria", Modificar.Categoria.Id);
+                datos.setearParametros("@IdDeveloper", Modificar.Developer.ID);
                 datos.setearParametros("@Launch_Date", Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day);
                 datos.EjecutarAccion();
 
@@ -173,15 +173,17 @@ namespace Negocio
 
                 aux.Categoria = new Categoria
                 {
-                    Name = (string)datos.Lector["name"]
+                    Name = (string)datos.Lector["category_name"]
                 };
-                aux.Categoria.Id = (int)datos.Lector["id"];
+                aux.Categoria.Id = (int)datos.Lector["Id_category"];
+                aux.Categoria.Estado = (bool)datos.Lector["Estado"];
 
                 aux.Developer = new Developers
                 {
-                    Name = (string)datos.Lector["name"],
+                    Name = (string)datos.Lector["developer_name"],
                 };
-                aux.Developer.ID = (int)datos.Lector["id"];
+                aux.Developer.ID = (int)datos.Lector["Id_developer"];
+                aux.Developer.Estado = (bool)datos.Lector["Estado"];
 
                 return aux;
             }
