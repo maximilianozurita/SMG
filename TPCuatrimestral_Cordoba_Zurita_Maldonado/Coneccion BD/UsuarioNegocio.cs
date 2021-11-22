@@ -16,7 +16,7 @@ namespace Negocio
             Usuario aux = new Usuario();
             try
             {
-                datos.SetearConsulta("Select id, nombre, lastname, email, cell, Fecha_nacimiento, Estado from users");
+                datos.SetearConsulta("Select id, name, lastname, email, cell, Fecha_nacimiento, Estado from users");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -42,15 +42,18 @@ namespace Negocio
         public Usuario Asignacion(AccesoDatos datos)
         {
 
+            Usuario aux = new Usuario();
+
             try
             {
-                Usuario aux = new Usuario();
                 aux.ID = (int)datos.Lector["Id"];
-                aux.Nombre = (string)datos.Lector["Nombre"];
+                aux.Nombre = (string)datos.Lector["name"];
                 aux.Apellido = (string)datos.Lector["lastname"];
                 aux.Email = (string)datos.Lector["email"];
                 aux.Celular = (string)datos.Lector["cell"];
-                aux.FechaNacimiento = (DateTime)datos.Lector["Fecha_nacimento"];
+                if(!(datos.Lector["Fecha_nacimiento"] is DBNull))
+                aux.FechaNacimiento = (DateTime)datos.Lector["Fecha_nacimiento"];
+                
                 aux.Estado = (bool)datos.Lector["Estado"];
                 return aux;
             }

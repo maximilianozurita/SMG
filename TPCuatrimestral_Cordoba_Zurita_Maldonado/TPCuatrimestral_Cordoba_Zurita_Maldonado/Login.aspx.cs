@@ -23,7 +23,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
             try
             {
-                loginUsuario = new LoginUsuario(txtEmail.Text, txtContraseña.Text, false);
+                loginUsuario = new LoginUsuario(txtEmail.Text, txtContraseña.Text, true);
 
                 if (negocio.Loguear(loginUsuario))
                 {
