@@ -32,7 +32,7 @@
                     <img src="/images/product/EFT.PNG" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5><%=item.Name %></h5>
-                        <p><%=item.Description%></p>m
+                        <p><%=item.Description%></p>
                     </div>
                 </div>
 

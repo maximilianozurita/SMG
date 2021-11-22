@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ListOfProduct.aspx.cs" Inherits="TPCuatrimestral_Cordoba_Zurita_Maldonado.ListOfProduct" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
+    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
+        { %>
+
     <div class="row">
         <%--checkbox--%>
         <div class="col-1">
@@ -73,12 +77,30 @@
             </section>
         </div>
     </div>
+    <%} %>
+    <%else
+        {%>
+    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Normal)
+        { %>
 
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Acceso denegado</h4>
+        <p>Usted no tiene permisos.</p>
+    </div>
 
+    <%} %>
+    <%else
+        { %>
 
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Acceso denegado</h4>
+        <p>Usted esta intentando ingresar a una dirección no valida.</p>
+        <hr>
+        <p class="mb-0"> Por favor, ingrese a su cuenta y luego intente de nuevo</p>
+    </div>
 
-
-
+    <%} %>
+    <%} %>
 
 
 </asp:Content>

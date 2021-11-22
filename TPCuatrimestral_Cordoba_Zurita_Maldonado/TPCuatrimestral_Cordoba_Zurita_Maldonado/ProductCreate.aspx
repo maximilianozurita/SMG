@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
+        { %>
+
 
     <div class="row">
         <div class="col-4">
@@ -34,46 +37,46 @@
 
                 <div class="col-12">
                     <label for="input" class="form-label">Nombre</label>
-                    <asp:TextBox runat="server" type="text" Cssclass="form-control" id="inputNombre"></asp:TextBox>
+                    <asp:TextBox runat="server" type="text" CssClass="form-control" ID="inputNombre"></asp:TextBox>
                 </div>
                 <div class="col-12">
                     <label for="input" class="form-label">Descripción</label>
-                    <asp:TextBox runat="server"  type="text" Cssclass="form-control" id="inputDescripcion"></asp:TextBox>
+                    <asp:TextBox runat="server" type="text" CssClass="form-control" ID="inputDescripcion"></asp:TextBox>
                 </div>
                 <div class="col-12">
                     <label for="input" class="form-label">Requerimientos</label>
-                    <asp:TextBox runat="server"  type="text" Cssclass="form-control" id="inputRequerimiento"></asp:TextBox>
+                    <asp:TextBox runat="server" type="text" CssClass="form-control" ID="inputRequerimiento"></asp:TextBox>
                 </div>
                 <div class="col-12">
                     <label for="input" class="form-label">Clasificación</label>
-                    <asp:TextBox runat="server"  type="number" min="0" max="22" Cssclass="form-control" id="inputClasificacion"></asp:TextBox>
+                    <asp:TextBox runat="server" type="number" min="0" max="22" CssClass="form-control" ID="inputClasificacion"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                     <label for="input" class="form-label">Precio</label>
-                    <asp:TextBox runat="server"  type="number" step=".01" min="0" Cssclass="form-control" id="inputPrecio"></asp:TextBox>
+                    <asp:TextBox runat="server" type="number" step=".01" min="0" CssClass="form-control" ID="inputPrecio"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
                     <label for="input" class="form-label">Descuento</label>
-                    <asp:TextBox runat="server"  type="number" step=".01" min="0" max="100" Cssclass="form-control" id="inputDescuento"></asp:TextBox>
+                    <asp:TextBox runat="server" type="number" step=".01" min="0" max="100" CssClass="form-control" ID="inputDescuento"></asp:TextBox>
                 </div>
 
                 <div class="col-12">
                     <label for="input" class="form-label">Fecha de lanzamiento</label>
-                    <asp:TextBox runat="server"  type="date" Cssclass="form-control" id="inputFechaLanzamiento"></asp:TextBox>
+                    <asp:TextBox runat="server" type="date" CssClass="form-control" ID="inputFechaLanzamiento"></asp:TextBox>
                 </div>
                 <div class="col-md-4">
                     <label for="inputCategory" class="form-label">Categoria</label>
-                   <asp:DropDownList Cssclass="form-select" id="DropdCategoria" runat="server"></asp:DropDownList>
+                    <asp:DropDownList CssClass="form-select" ID="DropdCategoria" runat="server"></asp:DropDownList>
                 </div>
                 <div class="col-md-4">
                     <label for="inputDev" class="form-label">Developer</label>
-                   <asp:DropDownList Cssclass="form-select" id="DropdDeveloper" runat="server"></asp:DropDownList>
+                    <asp:DropDownList CssClass="form-select" ID="DropdDeveloper" runat="server"></asp:DropDownList>
                 </div>
 
                 <div class="col-12">
                     <div class="form-check">
                         <label for="inputDestacado" class="form-label">Destacado</label>
-                        <asp:CheckBox runat="server" Cssclass="form-check-label" id="CheckDestacado" for="gridCheck"/>
+                        <asp:CheckBox runat="server" CssClass="form-check-label" ID="CheckDestacado" for="gridCheck" />
                     </div>
                 </div>
             </div>
@@ -84,9 +87,28 @@
         <asp:Button Text="Crear" CssClass="btn btn-primary" ID="btnCrearProducto" OnClick="btnCrearProducto_Click" runat="server" />
     </div>
 
+    <%} %>
+    <%else
+        {%>
+    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Normal)
+        { %>
 
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Acceso denegado</h4>
+        <p>Usted no tiene permisos.</p>
+    </div>
 
+    <%} %>
+    <%else
+        { %>
 
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Acceso denegado</h4>
+        <p>Usted esta intentando ingresar a una dirección no valida.</p>
+        <hr>
+        <p class="mb-0"> Por favor, ingrese a su cuenta y luego intente de nuevo</p>
+    </div>
 
-
+    <%} %>
+    <%} %>
 </asp:Content>
