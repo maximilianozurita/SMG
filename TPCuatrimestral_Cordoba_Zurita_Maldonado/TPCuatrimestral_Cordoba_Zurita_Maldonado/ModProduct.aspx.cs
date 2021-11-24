@@ -23,12 +23,22 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
             VGameNegocio vGame = new VGameNegocio();
 
-            int ProductID = int.Parse(Request.QueryString["ID"].ToString());
+            int ProductID = int.Parse(Request.QueryString["ID"]);
 
-            videogame = vGame.FindByFK(ProductID);
+            videogame = vGame.FindByPK(ProductID);
 
             try
             {
+
+                //validacion de login---------------------------------------------
+
+                if (!((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin))
+                {
+                    Session.Add("Error", "Acceso denegado");
+                    Response.Redirect("Error.aspx", false);
+                }
+
+                //Carga de info de producto en DB
                 if (!IsPostBack)
                 {
                     DropdCategoria.DataSource = categoria.Listar();

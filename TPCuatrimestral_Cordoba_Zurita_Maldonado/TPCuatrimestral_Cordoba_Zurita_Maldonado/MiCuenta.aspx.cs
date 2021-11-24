@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Mod_Dominio;
+
+
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
@@ -11,7 +15,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //validacion de login---------------------------------------------
 
+            if ((Session["email"]) == null)
+            {
+                Session.Add("Error", "Acceso denegado");
+                Response.Redirect("Error.aspx", false);
+            }
         }
     }
 }

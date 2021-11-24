@@ -41,7 +41,7 @@ namespace Negocio
 
         }
 
-        public VideoGame FindByFK(int ID)
+        public VideoGame FindByPK(int ID)
         {
 
             AccesoDatos datos = new AccesoDatos();

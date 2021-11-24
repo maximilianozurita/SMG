@@ -16,14 +16,24 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         public List<Developers> ListaDevelopers { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            //listado de dropList---------------------------------------------
             CategoriaNegocio categoria = new CategoriaNegocio();
             DevelopersNegocio developers = new DevelopersNegocio();
 
             try
             {
-                if (!IsPostBack)
+                //validacion de login---------------------------------------------
+
+                if (!((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin))
                 {
-                    DropdCategoria.DataSource= categoria.Listar();
+                    Session.Add("Error", "No tenes permiso para ingresar a esta pantalla");
+                    Response.Redirect("Error.aspx", false);
+                }
+                    //listado de dropList---------------------------------------------
+
+                    if (!IsPostBack)
+                {
+                    DropdCategoria.DataSource = categoria.Listar();
                     DropdCategoria.DataTextField = "Name";
                     DropdCategoria.DataValueField = "Id";
                     DropdCategoria.DataBind();
@@ -35,7 +45,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Session.Add("Error", ex);
             }
@@ -57,9 +67,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Description = inputDescripcion.Text;
                 videogame.Requerimentos = inputRequerimiento.Text;
                 videogame.ClasificaconPGI = int.Parse(inputClasificacion.Text);
-                videogame.Price =(float)decimal.Parse(inputPrecio.Text);
-                videogame.Descuento=(float)decimal.Parse(inputDescuento.Text);
-                videogame.LaunchDate= DateTime.Parse(inputFechaLanzamiento.Text);
+                videogame.Price = (float)decimal.Parse(inputPrecio.Text);
+                videogame.Descuento = (float)decimal.Parse(inputDescuento.Text);
+                videogame.LaunchDate = DateTime.Parse(inputFechaLanzamiento.Text);
                 videogame.Destacado = CheckDestacado.Checked;
 
                 videogame.Categoria = new Categoria

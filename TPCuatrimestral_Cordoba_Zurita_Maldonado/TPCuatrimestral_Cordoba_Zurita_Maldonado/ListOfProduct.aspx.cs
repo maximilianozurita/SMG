@@ -16,6 +16,15 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         public List<VideoGame> ListaVideogames { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //validacion de login---------------------------------------------
+
+            if (!((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin))
+            {
+                Session.Add("Error", "Acceso denegado");
+                Response.Redirect("Error.aspx", false);
+            }
+
             //Listar videojuegos
             VGameNegocio videoGame = new VGameNegocio();
 

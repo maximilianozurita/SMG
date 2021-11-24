@@ -13,7 +13,10 @@ INSERT INTO videoGames (name,Description,Requerimientos,Id_category,Id_developer
 ('Doom eternal','DESCRIPCION JUEGO 1','Requerimientos juego 1', 2,1,999,3,1,18,'2021-06-02'),
 ('Escape From tarkov','DESCRIPCION JUEGO 2','Requerimientos juego 2', 2,2,999,1,1,15,'2021-11-18'),
 ('God of war','DESCRIPCION JUEGO 3','Requerimientos juego 3', 3,3,999,0.1,1,15,'2021-11-18'),
+('The last of us 2','DESCRIPCION JUEGO 4','Requerimientos juego 4', 3,4,999,10,0,15,'2021-11-18'),
+('SubNautica','DESCRIPCION JUEGO 4','Requerimientos juego 4', 3,4,999,10,0,15,'2021-11-18'),
 ('The last of us 2','DESCRIPCION JUEGO 4','Requerimientos juego 4', 3,4,999,10,0,15,'2021-11-18');
 go
 INSERT INTO images (url_image,id_product) VALUES ('DoomEternal.jpg',1),('EFT.png',2),('GOW.jpeg',3),('TLU2',4);
+
 
