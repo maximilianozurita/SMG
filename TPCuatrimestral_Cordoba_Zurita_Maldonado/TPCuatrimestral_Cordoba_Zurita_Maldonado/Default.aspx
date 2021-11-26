@@ -56,11 +56,8 @@
     <div class="row mx-4 mt-5">
         <h2>Ofertas</h2>
         <div class="card-group">
-            <% foreach (var item in ListaVideogames)
-                {
-                    if (item.Descuento != 0)
-                    {
-            %>
+            <% foreach (var item in VideoGamesOfertas)
+                {%>
             <div class="col-lg-4">
                 <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="card mx-2 text-decoration-none text-reset">
                     <img src="/images/product/EFT.png" class="card-img-top" alt="..">
@@ -76,8 +73,7 @@
                 </a>
             </div>
 
-            <%}
-                } %>
+            <%}%>
         </div>
     </div>
 
@@ -86,11 +82,8 @@
         <h2>Nuevos lanzamientos</h2>
         <div class="card-group">
 
-            <% foreach (var item in ListaVideogames)
-                {
-                    if (DateTime.Today.DayOfYear - item.LaunchDate.DayOfYear < 15 && item.LaunchDate.Year == DateTime.Today.Year)
-                    {
-            %>
+            <% foreach (var item in NewVideoGames)
+                {%>
             <div class="col-lg-4">
                 <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="card mx-2 text-decoration-none text-reset">
                     <img src="/images/product/EFT.png" class="card-img-top" alt="..">
@@ -101,12 +94,11 @@
                     </div>
                     <div class="card-footer text-lg-center">
                         <small class="text-muted m-1">$<%=item.Price %></small>
-                        <small class="text-muted m-1">Descuento: <%=item.Descuento*100 %>%</small>
+                        <small class="text-muted m-1">Descuento: <%=item.Descuento %>%</small>
                     </div>
                 </a>
             </div>
-            <%}
-                } %>
+            <%}%>
         </div>
     </div>
 

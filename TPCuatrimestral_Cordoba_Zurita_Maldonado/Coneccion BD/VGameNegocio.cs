@@ -17,7 +17,7 @@ namespace Negocio
             VideoGame aux = new VideoGame();
             try
             {
-                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id;");
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.Id_category=c.id and v.Id_developer=d.id;");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -26,28 +26,77 @@ namespace Negocio
                     lista.Add(aux);
                 }
                 return lista;
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 datos.CerrarConexion();
             }
+        }
 
+        public List<VideoGame> Ofertas()
+        {
+            List<VideoGame> lista = new List<VideoGame>();
+            AccesoDatos datos = new AccesoDatos();
+            VideoGame aux = new VideoGame();
+            try
+            {
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.Id_category=c.id and v.Id_developer=d.id and V.Descuento!=0;");
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
 
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public List<VideoGame> NewLaunch()
+        {
+            List<VideoGame> lista = new List<VideoGame>();
+            AccesoDatos datos = new AccesoDatos();
+            VideoGame aux = new VideoGame();
+            try
+            {
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.Id_category=c.id and v.Id_developer=d.id and DAY(GETDATE())-DAY(V.Launch_Date) < 15 and MONTH(GETDATE())=MONTH(V.Launch_Date) and YEAR(GETDATE()) = YEAR(V.Launch_Date);");
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
         }
 
         public VideoGame FindByPK(int ID)
         {
-
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name , i.url_image as imageUrl,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d, images i where v.id=@Id and v.id=i.id_product and v.Id_category=c.id and v.Id_developer=d.id");
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where V.id=@Id and v.Id_category=c.id and v.Id_developer=d.id;");
                 datos.setearParametros("@Id", ID);
                 datos.EjecutarLectura();
                 datos.Lector.Read();
@@ -65,10 +114,66 @@ namespace Negocio
             {
                 datos.CerrarConexion();
             }
-
-
         }
 
+        public List<VideoGame> Search(string ItemToSeach)
+        {
+            List<VideoGame> SearchList = new List<VideoGame>();
+            AccesoDatos datos = new AccesoDatos();
+            VideoGame aux = new VideoGame();
+            try
+            {
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.name LIKE @buscar and v.Id_category=c.id and v.Id_developer=d.id;");
+                datos.setearParametros("@buscar", '%' + ItemToSeach + '%');
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
+
+                    SearchList.Add(aux);
+                }
+                return SearchList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+
+        public List<VideoGame> Filter(string Filter)
+        {
+            List<VideoGame> FilteredSearch = new List<VideoGame>();
+            AccesoDatos datos = new AccesoDatos();
+            VideoGame aux = new VideoGame();
+            try
+            {
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.Id_category=@Filtrar and v.Id_category=c.id and v.Id_developer=d.id;");
+                datos.setearParametros("@Filtrar",Filter);
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
+
+                    FilteredSearch.Add(aux);
+                }
+                return FilteredSearch;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
 
         public void Agregar(VideoGame nuevo)
         {

@@ -21,5 +21,20 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
 
         }
+        
+        protected void btnSearchClick(object sender, EventArgs e)
+        {
+            string ItemSearched = txtSearch.Text;
+            try
+            {
+                Response.Redirect("List.aspx?Search_query=" + ItemSearched, false);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+
     }
 }

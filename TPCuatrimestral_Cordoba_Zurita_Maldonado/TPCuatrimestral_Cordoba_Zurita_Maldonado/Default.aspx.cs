@@ -12,7 +12,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     public partial class Default : System.Web.UI.Page
     {
         public List<VideoGame> ListaVideogames { get; set; }
-        public List<VideoGame> VDestacados { get; set; }
+        public List<VideoGame> VideoGamesOfertas { get; set; }
         public List<VideoGame> NewVideoGames { get; set; }
 
         public List<VideoGame> VOfertas { get; set; }
@@ -22,25 +22,8 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             VGameNegocio videoGame = new VGameNegocio();
 
             ListaVideogames = videoGame.Listar();
-
-
-            //foreach (var item in ListaVideogames)
-            //{
-            //    if (item.Destacado == true)
-            //    {
-            //        VDestacados.Add(item);
-            //    }
-
-            //    if (item.Descuento != 0)
-            //    {
-            //        VOfertas.Add(item);
-            //    }
-
-            //    if(DateTime.Today.DayOfYear-item.LaunchDate.DayOfYear< 15 && item.LaunchDate.Year == DateTime.Today.Year)
-            //    {
-            //        NewVideoGames.Add(item);
-            //    }
-            //}
+            VideoGamesOfertas = videoGame.Ofertas();
+            NewVideoGames = videoGame.NewLaunch();
 
         }
     }

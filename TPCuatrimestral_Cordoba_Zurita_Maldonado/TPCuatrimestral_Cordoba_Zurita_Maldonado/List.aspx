@@ -55,7 +55,7 @@
                             </div>
                             <div class="card-footer text-lg-center">
                                 <small class="text-muted m-1">$<%=item.Price %></small>
-                                <small class="text-muted m-1">Descuento: <%=item.Descuento*100 %>%</small>
+                                <small class="text-muted m-1">Descuento: <%=item.Descuento%>%</small>
                             </div>
                         </a>
                     </div>
