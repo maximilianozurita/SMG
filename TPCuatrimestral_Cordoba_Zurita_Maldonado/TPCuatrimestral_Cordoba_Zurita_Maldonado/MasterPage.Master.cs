@@ -34,7 +34,11 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 throw;
             }
         }
-        
 
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
     }
 }
