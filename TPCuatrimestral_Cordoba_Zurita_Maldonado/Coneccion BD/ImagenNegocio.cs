@@ -46,7 +46,8 @@ namespace Negocio
                 Imagen aux = new Imagen();
                 aux.ID = (int)datos.Lector["id"];
                 aux.urlImagen = (string)datos.Lector["url_image"];
-                aux.idVdeoJuego = (int)datos.Lector["id_product"];
+                aux.idVdeoJuego= new VideoGame();
+                aux.idVdeoJuego.ID = (int)datos.Lector["id_product"];
                 aux.Estado = (bool)datos.Lector["Estado"];
                 return aux;
             }

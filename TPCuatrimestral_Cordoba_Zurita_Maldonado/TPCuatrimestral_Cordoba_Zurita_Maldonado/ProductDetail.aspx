@@ -8,7 +8,7 @@
     <div class="container-fluid border border-secondary  d-flex justify-content-between "  >
     
         <div class="d-flex align-items-start flex-column bd-highlight mb-3 ">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/IyDvT7XpaBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/IyDvT7XpaBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
            
             <div>              
        <img src="https://th.bing.com/th/id/OIP.8eupuFrT4NhRJkv6HXKsfQHaEK?pid=ImgDet&rs=1" class="w-25 h-50" alt="Alternate Text" />
@@ -29,9 +29,10 @@
         <h3 > Requisitos del Sistema </h3>
         <p><%=videogame.Requerimentos %></p>
     </div>
-
         </div>
        
+                               <a href="Carrito.aspx?id=<%=videogame.ID %>" type="button" class="btn btn-outline-primary">Agregar al Carrito</a>
+
         </div>
 
 
