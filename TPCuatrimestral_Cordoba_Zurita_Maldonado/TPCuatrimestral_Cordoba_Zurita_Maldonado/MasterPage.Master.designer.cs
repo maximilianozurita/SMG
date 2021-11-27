@@ -33,16 +33,11 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-<<<<<<< Updated upstream
         /// Control btnCerrarSesion.
-=======
-        /// Control txtSearch.
->>>>>>> Stashed changes
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-<<<<<<< Updated upstream
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
 
@@ -61,8 +56,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-=======
->>>>>>> Stashed changes
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSearch;
 

@@ -80,5 +80,41 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
+        public Usuario Loguear(string nombreUsuario)
+        {
+            Usuario user = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("SELECT id, name, lastName, cell, email, password FROM users where email = @email");
+                datos.setearParametros("@email", nombreUsuario);
+
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    user.ID = (int)datos.Lector["id"];
+                    user.Nombre = (string)datos.Lector["name"];
+                    user.Apellido = (string)datos.Lector["lastName"];
+                    user.Celular = (string)datos.Lector["cell"];
+                    user.Email = (string)datos.Lector["email"];
+                    user.Contraseña = (string)datos.Lector["password"];
+
+                    return user;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@
 
                     <a href="/ListOfUser.aspx" type="button" class="btn btn-outline-primary">Lista de usuarios</a>
                     <a href="/ListOfProduct.aspx" type="button" class="btn btn-outline-primary">Lista de productos</a>
-                    <a href="/MiCuenta.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
+                    <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
                     <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" />
 
                     <%} %>
@@ -39,8 +39,8 @@
                         { %>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href="/MiCuenta.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
-                        <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrar" OnClick="btnCerrarSesion_Click" runat="server" />
+                        <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
+                        <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrar" OnClick="btnCerrar_Click" runat="server" />
                     </div>
                     <%} %>
                     <%else

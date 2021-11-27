@@ -20,7 +20,6 @@ D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion B
 D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb
 D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.AssemblyReference.cache
 D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CoreCompileInputs.cache
-D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete
 D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
 D:\Users\tobio\Desktop\SMG3\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Conexion BD.dll

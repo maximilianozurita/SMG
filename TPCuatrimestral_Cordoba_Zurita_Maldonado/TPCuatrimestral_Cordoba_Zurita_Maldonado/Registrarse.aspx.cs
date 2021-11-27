@@ -13,7 +13,21 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario user = new Usuario();
+            UsuarioNegocio userNeg = new UsuarioNegocio();
 
+            string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
+
+            user = userNeg.Loguear(usuario);
+
+            if (usuario != "")
+            {
+                txtNombre.Text = user.Nombre;
+                txtApellido.Text = user.Apellido;
+                txtCelular.Text = user.Celular;
+                txtEmail.Text = user.Email;
+                txtContraseña.Text = user.Contraseña;
+            }
         }
 
         protected void btnCrearCuenta_Click(object sender, EventArgs e)
@@ -37,6 +51,21 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
                 throw;
             }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
+        protected void btnSI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNO_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

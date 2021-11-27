@@ -20,6 +20,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         {
             LoginUsuario loginUsuario;
             LoginUsuarioNegocio negocio = new LoginUsuarioNegocio();
+            Usuario user = new Usuario();
 
             try
             {
@@ -28,6 +29,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 if (negocio.Loguear(loginUsuario))
                 {
                     Session.Add("email", loginUsuario);
+                    Session.Add("NombreUsuario", txtEmail.Text);
                     if ((Session["email"]) != null && ((LoginUsuario)Session["email"]).TipoUsuario == TipoUsuario.Admin)
                     {
                         Response.Redirect("Default.aspx", false);
@@ -50,6 +52,11 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 Response.Redirect("Error.aspx");
 
             }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

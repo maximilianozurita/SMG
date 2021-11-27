@@ -26,7 +26,7 @@
         <asp:TextBox runat="server" ID="txtEmail" type="email" CssClass="form-control" placeholder="name@example.com" />
     </div>
 
-    
+
     <div class="col-md-4">
         <label for="txtContraseña" class="form-label">Contraseña</label>
         <asp:TextBox runat="server" ID="txtContraseña" CssClass="form-control" />
@@ -40,7 +40,36 @@
 
 
     <div class="col-12">
+
+        <%if ((Session["NombreUsuario"]) != null)
+            { %>
+
+        <asp:Button Text="Volver" CssClass="btn btn-primary" ID="btnVolver" OnClick="btnVolver_Click" runat="server" />
+
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            Modificar
+        </button>
+
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    Esta seguro que quiere modificar sus datos? 
+
+                    <asp:Button Text="Si!" CssClass="btn btn-primary" ID="btnSI" OnClick="btnSI_Click" runat="server" />
+                    <br />
+                    <asp:Button Text="Volver al Home" CssClass="btn btn-primary" ID="btnNO" OnClick="btnNO_Click" runat="server" />
+                    
+                </div>
+            </div>
+        </div>
+
+        <%} %>
+        <%else
+            { %>
+
         <asp:Button Text="Crear Cuenta" CssClass="btn btn-primary" ID="btnCrearCuenta" OnClick="btnCrearCuenta_Click" runat="server" />
+
+        <%} %>
     </div>
 
 </asp:Content>
