@@ -31,3 +31,4 @@ C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
+C:\Users\zurit\Documents\GitHub\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete
