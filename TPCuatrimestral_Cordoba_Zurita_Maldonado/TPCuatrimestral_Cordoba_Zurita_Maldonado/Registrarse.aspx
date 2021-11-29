@@ -55,7 +55,7 @@
                 <div class="card card-body" style="width: 300px;">
                     Esta seguro que quiere modificar sus datos? 
 
-                    <asp:Button Text="Si!" CssClass="btn btn-primary" ID="btnSI" OnClick="btnSI_Click" runat="server" />
+                    <asp:Button Text="Si!" CssClass="btn btn-primary" ID="btnSI" OnClick="btnCrearCuenta_Click" runat="server" />
                     <br />
                     <asp:Button Text="Volver al Home" CssClass="btn btn-primary" ID="btnNO" OnClick="btnNO_Click" runat="server" />
                     

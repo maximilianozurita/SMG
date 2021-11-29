@@ -80,7 +80,6 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
-
         public Usuario Loguear(string nombreUsuario)
         {
             Usuario user = new Usuario();
@@ -109,6 +108,30 @@ namespace Negocio
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void ModificarUsuario(Usuario modificar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("UPDATE users set name = @Nombre, lastName = @Apellido, cell = @Celular, email = @Email, password = @Contraseña WHERE email = @Email");
+                datos.setearParametros("@Nombre",modificar.Nombre);
+                datos.setearParametros("@Apellido",modificar.Apellido);
+                datos.setearParametros("@Celular",modificar.Celular);
+                datos.setearParametros("@Email", modificar.Email);
+                datos.setearParametros("@Contraseña",modificar.Contraseña);
+
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
             finally
