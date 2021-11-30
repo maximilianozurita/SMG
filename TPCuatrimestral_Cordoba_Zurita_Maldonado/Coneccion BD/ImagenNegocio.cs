@@ -38,24 +38,6 @@ namespace Negocio
 
 
         }
-        public Imagen Asignacion(AccesoDatos datos)
-        {
-
-            try
-            {
-                Imagen aux = new Imagen();
-                aux.ID = (int)datos.Lector["id"];
-                aux.urlImagen = (string)datos.Lector["url_image"];
-                aux.idVdeoJuego= new VideoGame();
-                aux.idVdeoJuego.ID = (int)datos.Lector["id_product"];
-                aux.Estado = (bool)datos.Lector["Estado"];
-                return aux;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public void Agregar(Imagen nuevo)
         {
@@ -63,7 +45,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("insert into images (id, url_image, id_product, Estado) values (" + nuevo.ID + ",'" + nuevo.urlImagen + "' , " + nuevo.idVdeoJuego + ", " + nuevo.Estado + ");");
+                datos.SetearConsulta("insert into images (url_image, id_product) values ('" + nuevo.urlImagen + "' , " + nuevo.idVdeoJuego +");");
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -73,6 +55,44 @@ namespace Negocio
             finally
             {
                 datos.CerrarConexion();
+            }
+        }
+        public void Eliminar(string Eliminar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("DELETE FROM images WHERE id_product=@Id;");
+                datos.setearParametros("@Id", Eliminar);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+        }
+        public Imagen Asignacion(AccesoDatos datos)
+        {
+
+            try
+            {
+                Imagen aux = new Imagen();
+                aux.ID = (int)datos.Lector["id"];
+                aux.urlImagen = (string)datos.Lector["url_image"];
+                aux.idVdeoJuego = (int)datos.Lector["id_product"];
+                aux.Estado = (bool)datos.Lector["Estado"];
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

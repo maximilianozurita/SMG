@@ -175,13 +175,13 @@ namespace Negocio
             }
         }
 
-        public void Agregar(VideoGame nuevo)
+        public int Agregar(VideoGame nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) values ('"+ nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+ nuevo.Categoria.Id + ","+ nuevo.Developer.ID + ","+nuevo.Price+","+nuevo.Descuento+","+ BoolToInt(nuevo.Destacado) + ","+nuevo.ClasificaconPGI+",'"+ nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
+                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) output inserted.ID values ('" + nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+ nuevo.Categoria.Id + ","+ nuevo.Developer.ID + ","+nuevo.Price+","+nuevo.Descuento+","+ BoolToInt(nuevo.Destacado) + ","+nuevo.ClasificaconPGI+",'"+ nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
 
                 datos.setearParametros("@Id", nuevo.ID);
                 datos.setearParametros("@Nombre", nuevo.Name);
@@ -194,7 +194,11 @@ namespace Negocio
                 datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametros("@IdDeveloper", nuevo.Developer.ID);
                 datos.setearParametros("@LaunchDate", nuevo.LaunchDate.Year+"-"+nuevo.LaunchDate.Month+"-"+ nuevo.LaunchDate.Day);
-                datos.EjecutarAccion();
+                datos.EjecutarLectura();
+                datos.Lector.Read();
+
+                return (int)datos.Lector["ID"];
+
             }
             catch (Exception ex)
             {
@@ -234,14 +238,14 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
-        public void Eliminar(VideoGame Eliminar)
+        public void Eliminar(string Eliminar)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
                 datos.SetearConsulta("DELETE FROM videoGames WHERE Id=@Id");
-                datos.setearParametros("@Id", Eliminar.ID);
+                datos.setearParametros("@Id", Eliminar);
                 datos.EjecutarAccion();
 
             }

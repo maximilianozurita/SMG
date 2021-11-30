@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,9 +12,12 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
     public partial class ProductCreate : System.Web.UI.Page
     {
-
         public List<Categoria> ListaCategoria { get; set; }
         public List<Developers> ListaDevelopers { get; set; }
+        
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //listado de dropList---------------------------------------------
@@ -58,9 +62,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             VideoGame videogame = new VideoGame();
             VGameNegocio videoGameNegocio = new VGameNegocio();
 
-            Imagen imagen = new Imagen();
-            ImagenNegocio imagenNegocio = new ImagenNegocio();
-
             try
             {
                 videogame.Name = inputNombre.Text;
@@ -84,23 +85,59 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     Name = (string)DropdDeveloper.SelectedItem.Text,
                 };
 
+                int IdInserted = videoGameNegocio.Agregar(videogame);
 
-                videoGameNegocio.Agregar(videogame);
+                Imagen imagen = new Imagen();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                imagen.idVdeoJuego = IdInserted;
+                List<FileUpload> archivos = new List<FileUpload>();
+
+                archivos.Add(FileUpload1);
+                archivos.Add(FileUpload2);
+                archivos.Add(FileUpload3);
+                archivos.Add(FileUpload4);
+                archivos.Add(FileUpload5);
+
+                foreach(var item in archivos)
+                {
+                    if (item.HasFile)
+                    {
+                        try
+                        {
+                            if (item.PostedFile.ContentType == "image/jpeg" || item.PostedFile.ContentType == "image/jpg" || item.PostedFile.ContentType == "image/png")
+                            {
+                                if (item.PostedFile.ContentLength < 3932160)
+                                {
+                                    string filename = Path.GetRandomFileName();
+                                    string extension = Path.GetExtension(item.FileName);
+                                    item.SaveAs(Server.MapPath("~/images/product/") + filename + extension);
+                                    imagen.urlImagen = filename + extension;
+                                    imagenNegocio.Agregar(imagen);
+                                }
+                                else
+                                {
+                                    //string AlertText = "Upload status: The file has to be less than 30 MB!";
+                                }
+                            }
+                            else
+                            {
+                                //string AlertText = "Upload status: Only JPEG files are accepted!";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            //string AlertText = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                        }
+                    }
+                }
 
                 Response.Redirect("ListOfProduct.aspx", false);
-
             }
             catch (Exception)
             {
                 throw;
             }
-
-
         }
-
-
-
-
-
     }
+    
 }

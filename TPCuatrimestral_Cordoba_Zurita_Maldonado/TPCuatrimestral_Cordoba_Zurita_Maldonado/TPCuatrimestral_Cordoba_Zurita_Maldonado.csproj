@@ -73,15 +73,9 @@
     <Content Include="Error.aspx" />
     <Content Include="ListOfProduct.aspx" />
     <Content Include="ListOfUser.aspx" />
-<<<<<<< HEAD
     <Content Include="Medio de Pago.aspx" />
-    <Content Include="MiCuenta.aspx" />
     <Content Include="ModProduct.aspx" />
-    <Content Include="OpcionAdmin.aspx" />
     <Content Include="Pancarta.aspx" />
-=======
-    <Content Include="ModProduct.aspx" />
->>>>>>> 08cd973f43a81c25ea55d206f23fd1ed98caa7e1
     <Content Include="ProductDetail.aspx" />
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
@@ -132,7 +126,6 @@
     <Compile Include="ListOfUser.aspx.designer.cs">
       <DependentUpon>ListOfUser.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Medio de Pago.aspx.cs">
       <DependentUpon>Medio de Pago.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,29 +133,12 @@
     <Compile Include="Medio de Pago.aspx.designer.cs">
       <DependentUpon>Medio de Pago.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MiCuenta.aspx.cs">
-      <DependentUpon>MiCuenta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MiCuenta.aspx.designer.cs">
-      <DependentUpon>MiCuenta.aspx</DependentUpon>
-    </Compile>
-=======
->>>>>>> 08cd973f43a81c25ea55d206f23fd1ed98caa7e1
     <Compile Include="ModProduct.aspx.cs">
       <DependentUpon>ModProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ModProduct.aspx.designer.cs">
       <DependentUpon>ModProduct.aspx</DependentUpon>
-    </Compile>
-<<<<<<< HEAD
-    <Compile Include="OpcionAdmin.aspx.cs">
-      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OpcionAdmin.aspx.designer.cs">
-      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pancarta.aspx.cs">
       <DependentUpon>Pancarta.aspx</DependentUpon>
@@ -171,8 +147,6 @@
     <Compile Include="Pancarta.aspx.designer.cs">
       <DependentUpon>Pancarta.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> 08cd973f43a81c25ea55d206f23fd1ed98caa7e1
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
