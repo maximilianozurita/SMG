@@ -20,6 +20,10 @@
         <asp:TextBox runat="server" ID="txtCelular" CssClass="form-control" />
     </div>
 
+    <div>
+        <label for="txtNacimiento" class="form-label">Fecha de nacimiento</label>
+        <asp:TextBox runat="server" type="date" CssClass="form-control" ID="txtNacimiento"></asp:TextBox>
+    </div>
 
     <div class="mb-3">
         <label for="txtEmail" class="form-label">Correo Electronico (Nombre de Usuario) </label>
@@ -55,10 +59,10 @@
                 <div class="card card-body" style="width: 300px;">
                     Esta seguro que quiere modificar sus datos? 
 
-                    <asp:Button Text="Si!" CssClass="btn btn-primary" ID="btnSI" OnClick="btnSI_Click" runat="server" />
+                    <asp:Button Text="Si!" CssClass="btn btn-primary" ID="btnSI" OnClick="btnCrearCuenta_Click" runat="server" />
                     <br />
                     <asp:Button Text="Volver al Home" CssClass="btn btn-primary" ID="btnNO" OnClick="btnNO_Click" runat="server" />
-                    
+
                 </div>
             </div>
         </div>
