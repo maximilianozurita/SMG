@@ -23,5 +23,10 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
           
 
         }
+
+        protected void btnAgregarCarrito_Click(object sender, EventArgs e)
+        {
+            if (((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)) ; 
+        }
     }
 }
