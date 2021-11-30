@@ -119,6 +119,25 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
 
         }
+        protected void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            VGameNegocio videoGameNegocio = new VGameNegocio();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            string ProductID = Request.QueryString["ID"].ToString();
+
+            try
+            {
+                imagenNegocio.Eliminar(ProductID);
+                videoGameNegocio.Eliminar(ProductID);
+                Response.Redirect("ListOfProduct.aspx", false);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+        }
 
 
 
