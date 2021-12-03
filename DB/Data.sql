@@ -17,6 +17,4 @@ INSERT INTO videoGames (name,Description,Requerimientos,Id_category,Id_developer
 ('SubNautica','DESCRIPCION JUEGO 4','Requerimientos juego 4', 3,4,999,10,0,15,'2021-11-18'),
 ('The last of us 2','DESCRIPCION JUEGO 4','Requerimientos juego 4', 3,4,999,10,0,15,'2021-11-18');
 go
-INSERT INTO images (url_image,id_product) VALUES ('DoomEternal.jpg',1),('EFT.png',2),('GOW.jpeg',3),('TLU2',4);
-
-
+INSERT INTO images (url_image,id_product) VALUES ('DoomEternal.jpg',1),('EFT.png',2),('GOW.jpeg',3),('TLU2.jpeg',4);
