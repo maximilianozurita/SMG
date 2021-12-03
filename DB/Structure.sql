@@ -40,6 +40,7 @@ Descuento decimal,
 Destacado bit,
 Clasificacion_PIG int,
 Launch_Date date,
+LinkVideo varchar(100),
 Estado bit default(1),
 )
 go
