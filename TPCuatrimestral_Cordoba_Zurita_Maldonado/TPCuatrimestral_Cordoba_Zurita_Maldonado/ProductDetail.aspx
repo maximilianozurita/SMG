@@ -11,7 +11,7 @@
           <iframe width="560" height="315" src="https://www.youtube.com/embed/IyDvT7XpaBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
            
             <div>              
-       <img src="https://th.bing.com/th/id/OIP.8eupuFrT4NhRJkv6HXKsfQHaEK?pid=ImgDet&rs=1" class="w-25 h-50" alt="Alternate Text" />
+                <img src="https://th.bing.com/th/id/OIP.8eupuFrT4NhRJkv6HXKsfQHaEK?pid=ImgDet&rs=1" class="w-25 h-50" alt="Alternate Text" />
                 <img src="https://www.goclecd.fr/wp-content/uploads/dishonored-800x600-1.jpg"class="w-25 h-50" alt="Alternate Text" />
                 <img src="https://assets.vg247.com/current/2012/08/dishonored-082212-2.jpg" class="w-25 h-50"alt="Alternate Text" />
                
@@ -31,7 +31,7 @@
     </div>
         </div>
        
-                               <a href="Carrito.aspx?id=<%=videogame.ID %>" type="button" class="btn btn-outline-primary">Agregar al Carrito</a>
+    <a href="Carrito.aspx?id=<%=videogame.ID %>" type="button" class="btn text-white ">Agregar al Carrito</a>
 
         </div>
 

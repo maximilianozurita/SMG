@@ -11,7 +11,16 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
 
 
-    public partial class ListOfUser
+    public partial class Medio_de_Pago
     {
+
+        /// <summary>
+        /// Control btnRealizarPedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRealizarPedido;
     }
 }

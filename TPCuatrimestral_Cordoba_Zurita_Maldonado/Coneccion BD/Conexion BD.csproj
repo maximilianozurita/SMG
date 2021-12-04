@@ -45,6 +45,7 @@
     <Compile Include="CarritoNegocio.cs" />
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="DevelopersNegocio.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="ImagenNegocio.cs" />
     <Compile Include="LoginUsuarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

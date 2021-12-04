@@ -68,7 +68,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("insert into Users (name, lastName, email, password, cell) values ('" + nuevo.Nombre + "','" + nuevo.Apellido + "','" + nuevo.Email + "','" + nuevo.Contraseña + "','" + nuevo.Celular + "')");
+                datos.SetearConsulta("insert into Users (name, lastName, email, password, cell, Fecha_nacimiento) values ('" + nuevo.Nombre + "','" + nuevo.Apellido + "','" + nuevo.Email + "','" + nuevo.Contraseña + "','" + nuevo.Celular + "','" + nuevo.FechaNacimiento.Year + "-" + nuevo.FechaNacimiento.Month + "-" + nuevo.FechaNacimiento.Day +"')");
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("SELECT id, name, lastName, cell, email, password FROM users where email = @email");
+                datos.SetearConsulta("SELECT id, name, lastName, cell, Fecha_nacimiento, email, password FROM users where email = @email");
                 datos.setearParametros("@email", nombreUsuario);
 
                 datos.EjecutarLectura();
@@ -98,6 +98,7 @@ namespace Negocio
                     user.Nombre = (string)datos.Lector["name"];
                     user.Apellido = (string)datos.Lector["lastName"];
                     user.Celular = (string)datos.Lector["cell"];
+                    user.FechaNacimiento = (DateTime)datos.Lector["Fecha_nacimiento"];
                     user.Email = (string)datos.Lector["email"];
                     user.Contraseña = (string)datos.Lector["password"];
 
@@ -121,10 +122,11 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("UPDATE users set name = @Nombre, lastName = @Apellido, cell = @Celular, email = @Email, password = @Contraseña WHERE email = @Email");
-                datos.setearParametros("@Nombre",modificar.Nombre);
-                datos.setearParametros("@Apellido",modificar.Apellido);
-                datos.setearParametros("@Celular",modificar.Celular);
+                datos.SetearConsulta("UPDATE users set name = @Nombre, lastName = @Apellido, cell = @Celular, Fecha_nacimiento = @FechaNacimiento, email = @Email, password = @Contraseña WHERE email = @Email");
+                datos.setearParametros("@Nombre", modificar.Nombre);
+                datos.setearParametros("@Apellido", modificar.Apellido);
+                datos.setearParametros("@Celular", modificar.Celular);
+                datos.setearParametros("@FechaNacimiento", modificar.FechaNacimiento.Year + "-" + modificar.FechaNacimiento.Month + "-" + modificar.FechaNacimiento.Day);
                 datos.setearParametros("@Email", modificar.Email);
                 datos.setearParametros("@Contraseña",modificar.Contraseña);
 

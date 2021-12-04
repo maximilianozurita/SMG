@@ -68,13 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Carrito.aspx" />
+    <Content Include="Datos Personales.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="ListOfProduct.aspx" />
     <Content Include="ListOfUser.aspx" />
-    <Content Include="MiCuenta.aspx" />
+    <Content Include="Medio de Pago.aspx" />
     <Content Include="ModProduct.aspx" />
-    <Content Include="OpcionAdmin.aspx" />
+    <Content Include="Pancarta.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Datos Personales.aspx.cs">
+      <DependentUpon>Datos Personales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datos Personales.aspx.designer.cs">
+      <DependentUpon>Datos Personales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -118,12 +126,12 @@
     <Compile Include="ListOfUser.aspx.designer.cs">
       <DependentUpon>ListOfUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MiCuenta.aspx.cs">
-      <DependentUpon>MiCuenta.aspx</DependentUpon>
+    <Compile Include="Medio de Pago.aspx.cs">
+      <DependentUpon>Medio de Pago.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MiCuenta.aspx.designer.cs">
-      <DependentUpon>MiCuenta.aspx</DependentUpon>
+    <Compile Include="Medio de Pago.aspx.designer.cs">
+      <DependentUpon>Medio de Pago.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModProduct.aspx.cs">
       <DependentUpon>ModProduct.aspx</DependentUpon>
@@ -132,12 +140,12 @@
     <Compile Include="ModProduct.aspx.designer.cs">
       <DependentUpon>ModProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OpcionAdmin.aspx.cs">
-      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
+    <Compile Include="Pancarta.aspx.cs">
+      <DependentUpon>Pancarta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OpcionAdmin.aspx.designer.cs">
-      <DependentUpon>OpcionAdmin.aspx</DependentUpon>
+    <Compile Include="Pancarta.aspx.designer.cs">
+      <DependentUpon>Pancarta.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>

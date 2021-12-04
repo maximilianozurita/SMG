@@ -25,6 +25,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     txtNombre.Text = user.Nombre;
                     txtApellido.Text = user.Apellido;
                     txtCelular.Text = user.Celular;
+                    txtNacimiento.Text = user.FechaNacimiento.ToString("yyyy-MM-dd");
                     txtEmail.Text = user.Email;
                     txtContraseña.Text = user.Contraseña;
                 }
@@ -43,9 +44,10 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
                 user.Nombre = txtNombre.Text;
                 user.Apellido = txtApellido.Text;
+                user.Celular = txtCelular.Text;
+                user.FechaNacimiento = DateTime.Parse(txtNacimiento.Text);
                 user.Contraseña = txtContraseña.Text;
                 user.Email = txtEmail.Text;
-                user.Celular = txtCelular.Text;
 
                 if (usuario == "")
                 {

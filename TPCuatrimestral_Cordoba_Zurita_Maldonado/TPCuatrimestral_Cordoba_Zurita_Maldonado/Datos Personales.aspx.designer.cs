@@ -11,7 +11,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
 
 
-    public partial class ListOfUser
+    public partial class Datos_Personales
     {
     }
 }
