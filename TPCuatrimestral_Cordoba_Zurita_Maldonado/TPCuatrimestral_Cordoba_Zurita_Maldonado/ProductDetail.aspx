@@ -21,7 +21,7 @@
          <div class=" border border-secondary text-white bg-dark w-75"    >  
             <img src="https://th.bing.com/th/id/R.da80502f891b765a1ea75f3d83400086?rik=26I1RHjMcstfgQ&pid=ImgRaw&r=0" class="  w-75" alt="Alternate Text" />
            <h3>Descripcion</h3>
-        <p ><%=videogame.Description %></p>
+        <p ><%=videogame.Description%></p>
         </div> 
              </div>     
         <div class="container">
