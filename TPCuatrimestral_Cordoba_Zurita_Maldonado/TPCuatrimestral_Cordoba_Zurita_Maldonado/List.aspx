@@ -6,35 +6,14 @@
 
     <div class="row">
         <%--checkbox--%>
-        <div class="col-1">
-            <div class="form-check mt-2">
-                <input class="form-check-input" type="checkbox" value="NuevosLanzamientos" id="CheckLanzamientos">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Nuevos
-                </label>
-            </div>
-            <div class="form-check mt-2">
-                <input class="form-check-input" type="checkbox" value="Ofertas" id="CheckOfertas">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Ofertas
-                </label>
-            </div>
+        <div class="col-2">
+            <asp:CheckBoxList ID="CheckBoxList" CssClass="form-check w-100 mt-4" runat="server" AutoPostBack="true">
+            </asp:CheckBoxList>
 
-            <%--categorias--%>
-            <% foreach (var item in ListaCategorias)
-                { %>
-            <div class="form-check mt-2">
-                <input class="form-check-input" type="checkbox" value="<%=item.Id %>" id="CheckCategoria<%=item.Id %>">
-                <label class="form-check-label" for="flexCheckDefault">
-                    <%=item.Name %>
-                </label>
-
-            </div>
-            <%} %>
         </div>
 
         <%--container videojuegos--%>
-        <div class="col-9">
+        <div class="col-8">
             <section id="galeria" class="container">
                 <div class="text-start pt-5">
                     <h2>Galeria videojuegos</h2>

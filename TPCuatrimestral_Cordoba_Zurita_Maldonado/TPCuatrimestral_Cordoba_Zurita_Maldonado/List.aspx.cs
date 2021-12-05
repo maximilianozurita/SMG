@@ -13,28 +13,34 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         public List<Categoria> ListaCategorias { get; set; }
         public List<VideoGame> ListaVideogames { get; set; }
-       
+        public List<VideoGame> List2 { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //Listar categorias
             CategoriaNegocio categoria = new CategoriaNegocio();
             ListaCategorias = categoria.Listar();
+            List<VideoGame> ListaAux = new List<VideoGame>();
 
             //Listado de videojuegos
             VGameNegocio videoGame = new VGameNegocio();
+
+            if (!IsPostBack)
+            {
+                CheckBoxList.DataSource = categoria.Listar();
+                CheckBoxList.DataTextField = "Name";
+                CheckBoxList.DataValueField = "Id";
+                CheckBoxList.DataBind();
+            }
+
+            int i;
             string Search_query = Request.QueryString["Search_query"];
             string Category_query = Request.QueryString["Category_query"];
             string SP_query = Request.QueryString["SP_query"];
-
             if (Search_query != null)
             {
                 //Listar videojuegos buscados
                 ListaVideogames = videoGame.Search(Search_query);
-            }
-            else if (Category_query != null)
-            {
-                //Listar videojuegos filtrados
-                ListaVideogames = videoGame.Filter(Category_query);
             }
             else if (SP_query == "Oferta")
             {
@@ -44,12 +50,51 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             {
                 ListaVideogames = videoGame.NewLaunch();
             }
+            else if (Category_query != null)
+            {
+                //Listar videojuegos filtrados
+                for (i = 0; i < CheckBoxList.Items.Count; i++)
+                {
+                    if (CheckBoxList.Items[i].Text == Category_query)
+                    {
+                        CheckBoxList.Items[i].Selected = true;
+                    }
+                }
+            }
             else
             {
                 //Listar videojuegos sin filtrar
                 ListaVideogames = videoGame.Listar();
             }
-                  
+
+
+            string chkbox = "";
+            for (i = 0; i < CheckBoxList.Items.Count; i++)
+            {
+                if (CheckBoxList.Items[i].Selected)
+                {
+                    if (chkbox == "")
+                    {
+                        chkbox = CheckBoxList.Items[i].Text;
+                    }
+                    else
+                    {
+                        chkbox += "'" + "," + "'" + CheckBoxList.Items[i].Text;
+                    }
+                }
+            }
+            bool CheckSelected = false;
+            if (chkbox != "")
+            {
+                CheckSelected = true;
+                ListaAux = videoGame.Filter(chkbox);
+            }
+            
+            if(CheckSelected)
+            {
+                ListaVideogames = ListaAux;
+            }
+
         }
     }
 }

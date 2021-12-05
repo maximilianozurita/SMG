@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <% foreach (var item in ListaCategoria)
                                         { %>
-                                    <li><a class="dropdown-item" href="List.aspx?Category_query=<%=item.Id %>"><%=item.Name %></a></li>
+                                    <li><a class="dropdown-item" href="List.aspx?Category_query=<%=item.Name %>"><%=item.Name %></a></li>
                                     <%} %>
                                 </ul>
                                 <li class="nav-item">

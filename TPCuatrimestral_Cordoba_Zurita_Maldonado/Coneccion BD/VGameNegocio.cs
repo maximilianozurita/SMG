@@ -152,7 +152,7 @@ namespace Negocio
             VideoGame aux = new VideoGame();
             try
             {
-                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where v.Id_category=@Filtrar and v.Id_category=c.id and v.Id_developer=d.id and V.Estado=1;");
+                datos.SetearConsulta("Select V.id, V.name, V.Description, V.Requerimientos,v.Id_category,V.Id_developer, d.name as developer_name, d.information as developer_info, c.name as category_name,V.Price,V.Descuento,V.Destacado,V.Clasificacion_PIG,V.Launch_Date,V.Estado From videoGames V, categories c, developers d where c.name in ('"+Filter+"') and v.Id_category=c.id and v.Id_developer=d.id and V.Estado=1;");
                 datos.setearParametros("@Filtrar",Filter);
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
