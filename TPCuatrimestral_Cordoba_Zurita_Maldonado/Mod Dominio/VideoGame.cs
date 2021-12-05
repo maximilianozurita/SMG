@@ -19,7 +19,7 @@ namespace Mod_Dominio
         public Categoria Categoria { get; set; }
         public Developers Developer { get; set; }
         public float Price { get; set; }
-      
+        public List <Imagen> Imagen { get; set; }
         public float Descuento { get; set; }
         public bool Destacado { get; set; }
         public int ClasificaconPGI { get; set; }

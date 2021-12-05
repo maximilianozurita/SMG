@@ -14,6 +14,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         public List<Categoria> ListaCategoria { get; set; }
         public List<Developers> ListaDevelopers { get; set; }
+        public List<Imagen> ListaImagenes { get; set; }
 
         public VideoGame videogame = new VideoGame();
         protected void Page_Load(object sender, EventArgs e)
@@ -21,11 +22,16 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             CategoriaNegocio categoria = new CategoriaNegocio();
             DevelopersNegocio developers = new DevelopersNegocio();
 
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+
             VGameNegocio vGame = new VGameNegocio();
 
             int ProductID = int.Parse(Request.QueryString["ID"]);
 
             videogame = vGame.FindByPK(ProductID);
+
+            ListaImagenes = imagenNegocio.FindByFk(ProductID);
 
             try
             {

@@ -40,6 +40,7 @@ Descuento decimal,
 Destacado bit,
 Clasificacion_PIG int,
 Launch_Date date,
+LinkVideo varchar(100),
 Estado bit default(1),
 )
 go
@@ -48,4 +49,18 @@ id int not null primary key IDENTITY(1,1),
 url_image varchar (200),
 id_product int Foreign key references videoGames(id),
 Estado bit default(1),
+)
+go
+Create table ventas(
+id int not null primary key IDENTITY(1,1),
+Id_user int Foreign key references users(id),
+suma decimal,
+)
+go
+Create table carrito(
+id int not null primary key IDENTITY(1,1),
+Id_user int Foreign key references users(id),
+Id_Product int Foreign key references videoGames(id),
+Price decimal,
+Id_venta int Foreign key references ventas(id),
 )

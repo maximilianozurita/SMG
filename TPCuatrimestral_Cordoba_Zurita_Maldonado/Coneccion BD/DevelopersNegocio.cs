@@ -94,7 +94,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("DELETE FROM developers WHERE Id=@Id");
+                datos.SetearConsulta("Update developers SET Estado=0 where id=@Id;");
                 datos.setearParametros("@Id", Eliminar.ID);
                 datos.EjecutarAccion();
 

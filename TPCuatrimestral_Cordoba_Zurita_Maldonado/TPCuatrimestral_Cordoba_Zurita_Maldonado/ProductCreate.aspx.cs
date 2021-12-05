@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Mod_Dominio;
 using Negocio;
 
+
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
     public partial class ProductCreate : System.Web.UI.Page
@@ -97,6 +98,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 archivos.Add(FileUpload3);
                 archivos.Add(FileUpload4);
                 archivos.Add(FileUpload5);
+
+                //File.Exists("~/images/product/")
+                //    File.Delete
 
                 foreach(var item in archivos)
                 {

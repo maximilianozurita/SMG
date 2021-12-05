@@ -90,7 +90,7 @@ namespace Negocio
 
            try
            {
-               datos.SetearConsulta("DELETE FROM categories WHERE Id=@Id");
+               datos.SetearConsulta("Update developers SET Estado=0 where id=@Id;");
                datos.setearParametros("@Id", Eliminar.Id);
                datos.EjecutarAccion();
 

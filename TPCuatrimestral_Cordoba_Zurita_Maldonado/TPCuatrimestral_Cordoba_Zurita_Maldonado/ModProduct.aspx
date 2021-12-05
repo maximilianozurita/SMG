@@ -83,6 +83,7 @@
 
             </div>
         </div>
+
     </div>
 
     <div class="row justify-content-center">
@@ -94,7 +95,7 @@
             <asp:Button Text="Modificar producto" CssClass="btn btn-primary btn-sm" ID="btnCrearProducto" OnClientClick="return validar()" OnClick="btnCrearProducto_Click" runat="server" />
         </div>
     </div>
-        <script>
+    <script>
         var inputNombre = document.getElementById("inputNombre");
         var inputDescripcion = document.getElementById("inputDescripcion");
         var inputRequerimiento = document.getElementById("inputRequerimiento");
@@ -212,7 +213,7 @@
             }
 
         }
-        </script>
+    </script>
 
 
 

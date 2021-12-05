@@ -57,13 +57,45 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
+
+        public List<Imagen> FindByFk(int ID)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            List<Imagen> lista = new List<Imagen>();
+            Imagen aux = new Imagen();
+            try
+            {
+                datos.SetearConsulta("Select i.id, i.url_image, i.Estado,i.id_product From images i where i.id_product=@Id ;");
+                datos.setearParametros("@Id", ID);
+                datos.EjecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    aux = Asignacion(datos);
+
+                    lista.Add(aux);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+
         public void Eliminar(string Eliminar)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.SetearConsulta("DELETE FROM images WHERE id_product=@Id;");
+                datos.SetearConsulta("Update images SET Estado=0 where id=@Id;");
                 datos.setearParametros("@Id", Eliminar);
                 datos.EjecutarAccion();
 
