@@ -30,8 +30,11 @@
         <p><%=videogame.Requerimentos %></p>
     </div>
         </div>
+
+      
+       <asp:Button ID="BtnAgregarCarro" OnClick="BtnAgregarCarro_Click" runat="server" Text="Agregar al carro" />
        
-    <a href="Carrito.aspx?id=<%=videogame.ID %>" type="button" class="btn text-white ">Agregar al Carrito</a>
+   
 
         </div>
 

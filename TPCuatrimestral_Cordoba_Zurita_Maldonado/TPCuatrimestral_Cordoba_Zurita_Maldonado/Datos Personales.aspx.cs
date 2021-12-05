@@ -13,5 +13,12 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         {
 
         }
+
+        protected void btnContinuar_Click(object sender, EventArgs e)
+        {
+
+
+            Response.Redirect("Medio de Pago.aspx");
+        }
     }
 }

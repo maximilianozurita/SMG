@@ -12,20 +12,37 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         public VideoGame videogame = new VideoGame();
         public List <Imagen> imagen = new List <Imagen>();
+        public List<VideoGame> ListaVJuegos = new List<VideoGame>();
+        int aux = 0;
+        VGameNegocio vGame = new VGameNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
-            VGameNegocio vGame = new VGameNegocio();
+    
+            int ProductoID = int.Parse(Request.QueryString["ID"]);
+           /// if (
+                videogame = vGame.FindByPK(ProductoID);
+           
+                ListaVJuegos.Add(videogame);
 
+            if ( !(Session["JuegosAgregados"] != null )) 
+            {
+                ListaVJuegos.Add(videogame);
 
-            int ProductID = int.Parse(Request.QueryString["ID"]);
+                Session.Add( "JuegosAgregados",ListaVJuegos);
+            }
 
-            videogame = vGame.FindByPK(ProductID);
+           
+        }
 
+        protected void BtnAgregarCarro_Click(object sender, EventArgs e)
 
+        {
+            ListaVJuegos.Add(videogame);
 
-
+            Session.Add("JuegosAgregados", ListaVJuegos);
+           
+            Response.Redirect("Carrito.aspx",false);
         }
     }
 }

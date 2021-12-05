@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocio;
-using Mod_Dominio;
 using Conexion_BD;
+using Mod_Dominio;
+
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
@@ -31,7 +31,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             }
            
 
-          //  Response.Redirect("Pancarta.aspx");
+            Response.Redirect("Pancarta.aspx");
         }
     }
 }
