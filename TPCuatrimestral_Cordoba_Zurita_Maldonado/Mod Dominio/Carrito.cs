@@ -8,5 +8,9 @@ namespace Mod_Dominio
 {
     public class Carrito
     {
+        public int IdUsuario { get; set; }
+        public VideoGame id_producto { get; set; }
+        public Venta Id_venta { get; set; }
+
     }
 }

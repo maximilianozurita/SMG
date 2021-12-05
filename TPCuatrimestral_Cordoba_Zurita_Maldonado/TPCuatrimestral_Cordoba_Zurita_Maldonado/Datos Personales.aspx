@@ -3,6 +3,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <script>
+        function validar()
+        {
+            var Nombre = document.getElementById("textNombre").value;
+            var Apellido = document.getElementById("textApellido").value;
+            var Telefono = document.getElementById("textTelefono").value;
+            var DNI = document.getElementById("DNI").value;
+            if (Nombre === "" || Apellido === "" || Telefono === "" || DNI === "")
+            {
+                alert("Los datos de la persona que pagara deben estar completos. Gracias!");
+                return false;
+            }
+            return true;
+        }
+    </script>
     <div class="conteiner p-4 ">
         <h5 class="d-flex justify-content-center"> DATOS DE CONTACTO</h5>
       <div class="input-group mb-3">
@@ -46,22 +61,19 @@
   <option value="two">Uruguay</option>
   <option value="three">Chile</option>
 </select>
-         <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="DNI" aria-label="DNI" aria-describedby="basic-addon1">
-</div>
-        </div>
+     </div>
+
     <div>
     <h6>Persona que Pagara</h6>
            <div class="p-2">
-
-  <input  type="text" class="form-control p-2 m-3" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
-  <input   type="text" class="form-control p-2 m-3"  placeholder="Apellido" aria-label="Apellido" aria-describedby="basic-addon1">
-  <input  type="text" class="form-control p-2 m-3" placeholder="Telefono" aria-label="Telefono" aria-describedby="basic-addon1">
-
-</div>
+  <input ID="DNI" type="text" class="form-control p-2 m-3" placeholder="DNI" aria-label="DNI" aria-describedby="basic-addon1">
+  <input ID ="textNombre" type="text" class="form-control p-2 m-3" ClientIdMode="static" placeholder="Nombre" aria-label="Nombre">
+  <input  ID ="textApellido" type="text" class="form-control p-2 m-3"  placeholder="Apellido" aria-label="Apellido">
+  <input  ID="textTelefono" type="text" class="form-control p-2 m-3" placeholder="Telefono" aria-label="Telefono">
+    </div>
         
 </div>
-    <a type="button" class="btn btn-primary" href="/Medio de Pago.aspx">Continuar</a>
-
+    
+    <asp:Button ID="btnContinuar" OnClientClick="return validar()" Onclick="btnContinuar_Click" class="btn btn-primary" runat="server" Text="Continuar" />
 
 </asp:Content>
