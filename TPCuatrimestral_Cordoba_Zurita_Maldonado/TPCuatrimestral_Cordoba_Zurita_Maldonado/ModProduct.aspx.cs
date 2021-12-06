@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,10 +22,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         {
             CategoriaNegocio categoria = new CategoriaNegocio();
             DevelopersNegocio developers = new DevelopersNegocio();
-
             ImagenNegocio imagenNegocio = new ImagenNegocio();
-
-
             VGameNegocio vGame = new VGameNegocio();
 
             int ProductID = int.Parse(Request.QueryString["ID"]);
@@ -81,14 +79,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 Session.Add("Error", ex);
             }
 
-
         }
 
         protected void btnCrearProducto_Click(object sender, EventArgs e)
         {
             VideoGame videogame = new VideoGame();
-            VGameNegocio videoGameNegocio = new VGameNegocio();
 
+            VGameNegocio videoGameNegocio = new VGameNegocio();
             int ProductID = int.Parse(Request.QueryString["ID"].ToString());
 
             try
@@ -114,16 +111,73 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     ID = int.Parse(DropdDeveloper.SelectedItem.Value),
                     Name = (string)DropdDeveloper.SelectedItem.Text,
                 };
-
                 videoGameNegocio.Modificar(videogame);
+
+                
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                List<Imagen> OldListImagen = new List<Imagen>();
+                OldListImagen = imagenNegocio.FindByFk(ProductID);
+                Imagen imagen = new Imagen();
+
+                imagen.idVdeoJuego = ProductID;
+
+                List<FileUpload> archivos = new List<FileUpload>();
+
+                archivos.Add(FileUpload1);
+                archivos.Add(FileUpload2);
+                archivos.Add(FileUpload3);
+                archivos.Add(FileUpload4);
+                archivos.Add(FileUpload5);
+
+                int i = 0;
+                foreach (var item in archivos)
+                {
+                    if (item.HasFile)
+                    {
+                        try
+                        {
+                            if (item.PostedFile.ContentType == "image/jpeg" || item.PostedFile.ContentType == "image/jpg" || item.PostedFile.ContentType == "image/png")
+                            {
+                                if (item.PostedFile.ContentLength < 3932160)
+                                {
+                                    string filename = Path.GetRandomFileName();
+                                    string extension = Path.GetExtension(item.FileName);
+                                    item.SaveAs(Server.MapPath("~/images/product/") + filename + extension);
+                                    imagen.urlImagen = filename + extension;
+
+                                    string OldNameImagen = OldListImagen[i].urlImagen;
+                                    if(File.Exists(Server.MapPath("~/images/product/") + OldNameImagen))
+                                    {
+                                        File.Delete(Server.MapPath("~/images/product/") + OldNameImagen);
+                                    }
+                                    imagen.ID = OldListImagen[i].ID;
+
+                                    imagenNegocio.Modificar(imagen);
+                                }
+                                else
+                                {
+                                    //alerta
+                                }
+                            }
+                            else
+                            {
+                                //alerta
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            //alerta con ex
+                        }
+                    }
+                    i++;
+                }
+
                 Response.Redirect("ListOfProduct.aspx", false);
             }
             catch (Exception)
             {
                 throw;
             }
-
-
         }
         protected void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -142,11 +196,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 throw;
             }
 
-
         }
-
-
-
 
     }
 }

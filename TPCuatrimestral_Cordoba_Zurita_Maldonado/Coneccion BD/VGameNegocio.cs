@@ -214,7 +214,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category ="+ Modificar.Categoria.Id+ ", Id_developer="+ Modificar.Developer.ID + ", Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID+ " and V.Estado=1");
+                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category ="+ Modificar.Categoria.Id+ ", Id_developer="+ Modificar.Developer.ID + ", Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
                 datos.setearParametros("@Id", Modificar.ID);
                 datos.setearParametros("@name", Modificar.Name);
                 datos.setearParametros("@Description", Modificar.Description);

@@ -13,15 +13,15 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         public List<Categoria> ListaCategorias { get; set; }
         public List<VideoGame> ListaVideogames { get; set; }
-        public List<VideoGame> List2 { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //Listar categorias
             CategoriaNegocio categoria = new CategoriaNegocio();
             ListaCategorias = categoria.Listar();
-            List<VideoGame> ListaAux = new List<VideoGame>();
 
+            List<VideoGame> ListaAux = new List<VideoGame>();
+            
             //Listado de videojuegos
             VGameNegocio videoGame = new VGameNegocio();
 
@@ -67,7 +67,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 ListaVideogames = videoGame.Listar();
             }
 
-
             string chkbox = "";
             for (i = 0; i < CheckBoxList.Items.Count; i++)
             {
@@ -89,11 +88,12 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 CheckSelected = true;
                 ListaAux = videoGame.Filter(chkbox);
             }
-            
-            if(CheckSelected)
+
+            if (CheckSelected)
             {
                 ListaVideogames = ListaAux;
             }
+
 
         }
     }

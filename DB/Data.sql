@@ -20,8 +20,8 @@ INSERT INTO videoGames (name,Description,Requerimientos,Id_category,Id_developer
 go
 INSERT INTO images (url_image,id_product) VALUES 
 ('DoomEternal1.jpg',1),('DoomEternal2.jpg',1),('DoomEternal3.jpg',1),('DoomEternal4.jpg',1),('DoomEternal5.png',1),
-('EFT1.png',2),('EFT2.jpg',2),('EFT3.jpg',2),('EFT4.jpg',2),('EFT5.jpg',2),
-('GOW1.jpeg',3),('GOW2.jpeg',3),('GOW3.jpeg',3),('GOW4.jpeg',3),('GOW5.jpeg',3),
+('EFT1.png',2),('EFT2.jpeg',2),('EFT3.jpg',2),('EFT4.jpg',2),('EFT5.jpg',2),
+('GOW1.jpeg',3),('GOW2.jpg',3),('GOW3.jpg',3),('GOW4.jpg',3),('GOW5.jpg',3),
 ('TLU21.jpeg',4),('TLU22.jpEg',4),('TLU23.jpg',4),('TLU24.jpg',4),('TLU25.jpg',4),
 ('SubNautica1.jpg',5),('SubNautica2.jpg',5),('SubNautica3.jpg',5),('SubNautica4.jpg',5),('SubNautica5.jpg',5),
 ('AgeOfEmpires21.jpg',6),('AgeOfEmpires22.jpg',6),('AgeOfEmpires23.jpg',6),('AgeOfEmpires24.jpg',6),('AgeOfEmpires25.jpg',6),

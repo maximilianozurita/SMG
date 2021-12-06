@@ -15,9 +15,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         public List<Categoria> ListaCategoria { get; set; }
         public List<Developers> ListaDevelopers { get; set; }
-        
 
-        
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,9 +34,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                     Session.Add("Error", "No tenes permiso para ingresar a esta pantalla");
                     Response.Redirect("Error.aspx", false);
                 }
-                    //listado de dropList---------------------------------------------
+                //listado de dropList---------------------------------------------
 
-                    if (!IsPostBack)
+                if (!IsPostBack)
                 {
                     DropdCategoria.DataSource = categoria.Listar();
                     DropdCategoria.DataTextField = "Name";
@@ -99,10 +99,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 archivos.Add(FileUpload4);
                 archivos.Add(FileUpload5);
 
-                //File.Exists("~/images/product/")
-                //    File.Delete
-
-                foreach(var item in archivos)
+                foreach (var item in archivos)
                 {
                     if (item.HasFile)
                     {
@@ -120,17 +117,17 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                                 }
                                 else
                                 {
-                                    //string AlertText = "Upload status: The file has to be less than 30 MB!";
+                                    //alerta
                                 }
                             }
                             else
                             {
-                                //string AlertText = "Upload status: Only JPEG files are accepted!";
+                                //alerta
                             }
                         }
                         catch (Exception ex)
                         {
-                            //string AlertText = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                            //alerta con ex
                         }
                     }
                 }
@@ -143,5 +140,5 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             }
         }
     }
-    
+
 }

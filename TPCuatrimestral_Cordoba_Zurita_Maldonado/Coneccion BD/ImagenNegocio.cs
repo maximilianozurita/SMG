@@ -39,25 +39,6 @@ namespace Negocio
 
         }
 
-        public void Agregar(Imagen nuevo)
-        {
-            AccesoDatos datos = new AccesoDatos();
-
-            try
-            {
-                datos.SetearConsulta("insert into images (url_image, id_product) values ('" + nuevo.urlImagen + "' , " + nuevo.idVdeoJuego +");");
-                datos.EjecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion();
-            }
-        }
-
         public List<Imagen> FindByFk(int ID)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -88,6 +69,43 @@ namespace Negocio
             }
         }
 
+        public void Agregar(Imagen nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("insert into images (url_image, id_product) values ('" + nuevo.urlImagen + "' , " + nuevo.idVdeoJuego +");");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void Modificar(Imagen Modificar)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("update images set url_image='"+Modificar.urlImagen+"' where id="+Modificar.ID+";");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
 
         public void Eliminar(string Eliminar)
         {
