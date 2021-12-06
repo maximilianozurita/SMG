@@ -17,7 +17,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            LJuegosAgregados = (List<>Session["JuegosAgregados"];
+           // LJuegosAgregados = (List<>Session["JuegosAgregados"];
           
         }
 
