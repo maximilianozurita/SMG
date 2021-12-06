@@ -31,3 +31,11 @@ C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.AssemblyReference.cache
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CoreCompileInputs.cache
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.dll
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.pdb
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Conexion BD.dll
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Conexion BD.pdb
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.dll
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb

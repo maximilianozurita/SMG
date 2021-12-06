@@ -116,13 +116,14 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
-        public void ModificarUsuario(Usuario modificar)
+        public void ModificarUsuario(Usuario modificar, string usuario)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.SetearConsulta("UPDATE users set name = @Nombre, lastName = @Apellido, cell = @Celular, Fecha_nacimiento = @FechaNacimiento, email = @Email, password = @Contraseña WHERE email = @Email");
+                datos.SetearConsulta("UPDATE users set name = @Nombre, lastName = @Apellido, cell = @Celular, Fecha_nacimiento = @FechaNacimiento, email = @Email, password = @Contraseña WHERE email = @Usuario");
+                datos.setearParametros("@Usuario", usuario);
                 datos.setearParametros("@Nombre", modificar.Nombre);
                 datos.setearParametros("@Apellido", modificar.Apellido);
                 datos.setearParametros("@Celular", modificar.Celular);

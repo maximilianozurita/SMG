@@ -58,5 +58,10 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void linkContraseñaOlvidada_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ContraseñaOlvidada.aspx");
+        }
     }
 }

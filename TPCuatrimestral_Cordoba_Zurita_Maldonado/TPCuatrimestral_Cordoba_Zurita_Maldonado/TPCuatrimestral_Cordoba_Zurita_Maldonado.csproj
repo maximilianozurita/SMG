@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Carrito.aspx" />
+    <Content Include="ContraseñaOlvidada.aspx" />
     <Content Include="Datos Personales.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
@@ -90,6 +91,13 @@
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContraseñaOlvidada.aspx.cs">
+      <DependentUpon>ContraseñaOlvidada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContraseñaOlvidada.aspx.designer.cs">
+      <DependentUpon>ContraseñaOlvidada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Datos Personales.aspx.cs">
       <DependentUpon>Datos Personales.aspx</DependentUpon>
