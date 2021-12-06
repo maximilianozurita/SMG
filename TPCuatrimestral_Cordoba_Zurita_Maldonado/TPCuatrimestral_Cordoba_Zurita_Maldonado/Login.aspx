@@ -13,6 +13,7 @@
             </div>
             <div class="mb-3">
                 <asp:TextBox runat="server" type="password" CssClass="form-control" ID="txtContraseña" aria-describedby="exampleInputPassword1" placeholder="Password" />
+                <asp:Button type="button" CssClass="btn btn-link" Text="¿Olvidaste tu contraseña? Preciona aqui!" ID="linkContraseñaOlvidada" OnClick="linkContraseñaOlvidada_Click" runat="server" />
             </div>
             <div class="container justify-content-center align-content-center">
                 <asp:Button Text="Cancelar" CssClass="btn btn-primary" ID="btnCancelar" OnClick="btnCancelar_Click" runat="server" />

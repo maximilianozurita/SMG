@@ -39,4 +39,3 @@ D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Conexion BD.pdb
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.dll
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\bin\Debug\Mod Dominio.pdb
-D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Coneccion BD\obj\Debug\Conexion BD.csproj.CopyComplete

@@ -60,7 +60,8 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 }
                 else
                 {
-                    userNeg.ModificarUsuario(user);
+                    userNeg.ModificarUsuario(user, usuario);
+                    Session["NombreUsuario"] = txtEmail.Text;
                 }
 
             }
