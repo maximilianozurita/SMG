@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocio;
+using Conexion_BD;
 using Mod_Dominio;
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
@@ -20,11 +20,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             CategoriaNegocio categoria = new CategoriaNegocio();
             ListaCategorias = categoria.Listar();
 
-            List<VideoGame> ListaAux = new List<VideoGame>();
-            
-            //Listado de videojuegos
-            VGameNegocio videoGame = new VGameNegocio();
-
             if (!IsPostBack)
             {
                 CheckBoxList.DataSource = categoria.Listar();
@@ -32,68 +27,14 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 CheckBoxList.DataValueField = "Id";
                 CheckBoxList.DataBind();
             }
-
-            int i;
+            
             string Search_query = Request.QueryString["Search_query"];
             string Category_query = Request.QueryString["Category_query"];
             string SP_query = Request.QueryString["SP_query"];
-            if (Search_query != null)
-            {
-                //Listar videojuegos buscados
-                ListaVideogames = videoGame.Search(Search_query);
-            }
-            else if (SP_query == "Oferta")
-            {
-                ListaVideogames = videoGame.Ofertas();
-            }
-            else if (SP_query == "NewLaunch")
-            {
-                ListaVideogames = videoGame.NewLaunch();
-            }
-            else if (Category_query != null)
-            {
-                //Listar videojuegos filtrados
-                for (i = 0; i < CheckBoxList.Items.Count; i++)
-                {
-                    if (CheckBoxList.Items[i].Text == Category_query)
-                    {
-                        CheckBoxList.Items[i].Selected = true;
-                    }
-                }
-            }
-            else
-            {
-                //Listar videojuegos sin filtrar
-                ListaVideogames = videoGame.Listar();
-            }
 
-            string chkbox = "";
-            for (i = 0; i < CheckBoxList.Items.Count; i++)
-            {
-                if (CheckBoxList.Items[i].Selected)
-                {
-                    if (chkbox == "")
-                    {
-                        chkbox = CheckBoxList.Items[i].Text;
-                    }
-                    else
-                    {
-                        chkbox += "'" + "," + "'" + CheckBoxList.Items[i].Text;
-                    }
-                }
-            }
-            bool CheckSelected = false;
-            if (chkbox != "")
-            {
-                CheckSelected = true;
-                ListaAux = videoGame.Filter(chkbox);
-            }
-
-            if (CheckSelected)
-            {
-                ListaVideogames = ListaAux;
-            }
-
+            ///----------------Filtrar---------------///////
+            Helpers Helper = new Helpers();
+            ListaVideogames = Helper.Filtro(Search_query, SP_query, Category_query, CheckBoxList);
 
         }
     }

@@ -21,7 +21,6 @@
                 </div>
 
                 <div class="row">
-
                     <div class="col-lg-4">
                         <a href="/ProductCreate.aspx" class="card mx-2 mb-4 text-decoration-none text-reset">
                             <img src="/images/upload.jpg" class="card-img-top" alt="..">

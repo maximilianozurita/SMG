@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mod_Dominio;
-using Negocio;
+using Conexion_BD;
 
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
@@ -15,9 +15,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     {
         public List<Categoria> ListaCategoria { get; set; }
         public List<Developers> ListaDevelopers { get; set; }
-
-
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -54,8 +51,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             {
                 Session.Add("Error", ex);
             }
-
-
+            
         }
 
         protected void btnCrearProducto_Click(object sender, EventArgs e)
@@ -88,49 +84,15 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
                 int IdInserted = videoGameNegocio.Agregar(videogame);
 
-                Imagen imagen = new Imagen();
-                ImagenNegocio imagenNegocio = new ImagenNegocio();
-                imagen.idVdeoJuego = IdInserted;
                 List<FileUpload> archivos = new List<FileUpload>();
-
                 archivos.Add(FileUpload1);
                 archivos.Add(FileUpload2);
                 archivos.Add(FileUpload3);
                 archivos.Add(FileUpload4);
                 archivos.Add(FileUpload5);
 
-                foreach (var item in archivos)
-                {
-                    if (item.HasFile)
-                    {
-                        try
-                        {
-                            if (item.PostedFile.ContentType == "image/jpeg" || item.PostedFile.ContentType == "image/jpg" || item.PostedFile.ContentType == "image/png")
-                            {
-                                if (item.PostedFile.ContentLength < 3932160)
-                                {
-                                    string filename = Path.GetRandomFileName();
-                                    string extension = Path.GetExtension(item.FileName);
-                                    item.SaveAs(Server.MapPath("~/images/product/") + filename + extension);
-                                    imagen.urlImagen = filename + extension;
-                                    imagenNegocio.Agregar(imagen);
-                                }
-                                else
-                                {
-                                    //alerta
-                                }
-                            }
-                            else
-                            {
-                                //alerta
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            //alerta con ex
-                        }
-                    }
-                }
+                Helpers helpers = new Helpers();
+                helpers.AgregarImagen(archivos, IdInserted);
 
                 Response.Redirect("ListOfProduct.aspx", false);
             }

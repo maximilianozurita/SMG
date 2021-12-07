@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mod_Dominio;
-namespace Negocio
+namespace Conexion_BD
 {
     public class ImagenNegocio
     {
@@ -113,7 +113,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("Update images SET Estado=0 where id=@Id;");
+                datos.SetearConsulta("Update images SET Estado=0 where id_product=@Id;");
                 datos.setearParametros("@Id", Eliminar);
                 datos.EjecutarAccion();
 

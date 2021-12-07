@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mod_Dominio;
 
-namespace Negocio
+namespace Conexion_BD
 {
     public class LoginUsuarioNegocio
     {

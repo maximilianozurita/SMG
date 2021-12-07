@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mod_Dominio;
 using Conexion_BD;
-using Negocio;
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {

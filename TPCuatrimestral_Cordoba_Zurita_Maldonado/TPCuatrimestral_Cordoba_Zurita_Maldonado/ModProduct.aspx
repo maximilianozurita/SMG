@@ -63,27 +63,27 @@
 
     <div class="row m-auto pt-4">
         <div class="mb-3 col-lg-4">
-            <img src="/images/product/<%=ListaImagenes.Count>=1? ListaImagenes[0].urlImagen:"Default.png"%>" class="img-fluid" />
+            <img src="/images/product/<%=videogame.Imagen.Count>=1? videogame.Imagen[0].urlImagen:"Default.png"%>" class="img-fluid" />
             <label for="formFile" class="form-label">Cargue imagen 1</label>
             <asp:FileUpload ID="FileUpload1" runat="server" accept=" .jpg .png .jpeg" CssClass="form-control form-control-lg " />
         </div>
         <div class="mb-3 col-lg-4">
-            <img src="/images/product/<%=ListaImagenes.Count>=2? ListaImagenes[1].urlImagen:"Default.png"%>" class="img-fluid" />
+            <img src="/images/product/<%=videogame.Imagen.Count>=2? videogame.Imagen[1].urlImagen:"Default.png"%>" class="img-fluid" />
             <label for="formFileSm" class="form-label">Cargue imagen 2</label>
             <asp:FileUpload ID="FileUpload2" runat="server" accept=" .jpg .png .jpeg" CssClass="form-control form-control-lg" />
         </div>
         <div class="mb-3 col-lg-4">
-            <img src="/images/product/<%=ListaImagenes.Count>=3? ListaImagenes[2].urlImagen:"Default.png"%>" class="img-fluid" />
+            <img src="/images/product/<%=videogame.Imagen.Count>=3? videogame.Imagen[2].urlImagen:"Default.png"%>" class="img-fluid" />
             <label for="formFileSm" class="form-label">Cargue imagen 3</label>
             <asp:FileUpload ID="FileUpload3" runat="server" accept=" .jpg .png .jpeg" CssClass="form-control form-control-lg" />
         </div>
         <div class="mb-3 col-lg-4">
-            <img src="/images/product/<%=ListaImagenes.Count>=4? ListaImagenes[3].urlImagen:"Default.png"%>" class="img-fluid" />
+            <img src="/images/product/<%=videogame.Imagen.Count>=4? videogame.Imagen[3].urlImagen:"Default.png"%>" class="img-fluid" />
             <label for="formFileSm" class="form-label">Cargue imagen 4</label>
             <asp:FileUpload ID="FileUpload4" runat="server" accept=" .jpg .png .jpeg" CssClass="form-control form-control-lg" />
         </div>
         <div class="mb-3 col-lg-4">
-            <img src="/images/product/<%=ListaImagenes.Count>=5? ListaImagenes[4].urlImagen:"Default.png"%>" class="img-fluid" />
+            <img src="/images/product/<%=videogame.Imagen.Count>=5? videogame.Imagen[4].urlImagen:"Default.png"%>" class="img-fluid" />
             <label for="formFileSm" class="form-label">Cargue imagen 5</label>
             <asp:FileUpload ID="FileUpload5" runat="server" accept=" .jpg .png .jpeg" CssClass="form-control form-control-lg" />
         </div>

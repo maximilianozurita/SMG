@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mod_Dominio;
-namespace Negocio
+namespace Conexion_BD
 {
     //public class CarritoNegocio
     //{
@@ -12,8 +12,8 @@ namespace Negocio
     //    {
     //        AccesoDatos datos = new AccesoDatos();
 
-            try
-            {
+            //try
+            //{
                 //datos.SetearConsulta("insert into Carrito (idUsuario,idProducto,idventas) output inserted.ID values ('" + nuevo.Name + "','" + nuevo.Description + "','" + nuevo.Requerimentos + "'," + nuevo.Categoria.Id + "," + nuevo.Developer.ID + "," + nuevo.Price + "," + nuevo.Descuento + "," + BoolToInt(nuevo.Destacado) + "," + nuevo.ClasificaconPGI + ",'" + nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
 
                 //datos.setearParametros("@Id", nuevo.ID);

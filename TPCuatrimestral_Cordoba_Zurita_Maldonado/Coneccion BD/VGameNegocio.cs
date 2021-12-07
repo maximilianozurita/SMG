@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Mod_Dominio;
 
-namespace Negocio
+namespace Conexion_BD
 {
     public class VGameNegocio
     {
         ImagenNegocio imagenNegocio = new ImagenNegocio();
+        Helpers helpers = new Helpers();
+
         public List<VideoGame> Listar()
         {
             List<VideoGame> lista = new List<VideoGame>();
@@ -181,7 +183,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) output inserted.ID values ('" + nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+ nuevo.Categoria.Id + ","+ nuevo.Developer.ID + ","+nuevo.Price+","+nuevo.Descuento+","+ BoolToInt(nuevo.Destacado) + ","+nuevo.ClasificaconPGI+",'"+ nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
+                datos.SetearConsulta("insert into videoGames (name, Description,Requerimientos,Id_category,Id_developer,Price,Descuento,Destacado,Clasificacion_PIG,Launch_Date) output inserted.ID values ('" + nuevo.Name +"','" + nuevo.Description + "','"+nuevo.Requerimentos+"',"+ nuevo.Categoria.Id + ","+ nuevo.Developer.ID + ","+nuevo.Price+","+nuevo.Descuento+","+ helpers.BoolToInt(nuevo.Destacado) + ","+nuevo.ClasificaconPGI+",'"+ nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
 
                 datos.setearParametros("@Id", nuevo.ID);
                 datos.setearParametros("@Nombre", nuevo.Name);
@@ -189,7 +191,7 @@ namespace Negocio
                 datos.setearParametros("@Requerimentos", nuevo.Requerimentos);
                 datos.setearParametros("@Precio", nuevo.Price);
                 datos.setearParametros("@Descuento", nuevo.Descuento);
-                datos.setearParametros("@PDestacado", BoolToInt(nuevo.Destacado));
+                datos.setearParametros("@PDestacado", helpers.BoolToInt(nuevo.Destacado));
                 datos.setearParametros("@Clasificacon_PGI", nuevo.ClasificaconPGI);
                 datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
                 datos.setearParametros("@IdDeveloper", nuevo.Developer.ID);
@@ -214,14 +216,14 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category ="+ Modificar.Categoria.Id+ ", Id_developer="+ Modificar.Developer.ID + ", Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
+                datos.SetearConsulta("update videoGames set name='"+ Modificar.Name+"', Description='"+ Modificar.Description+"', Requerimientos='"+ Modificar.Requerimentos + "', Price=" + Modificar.Price+",Descuento="+Modificar.Descuento+", Destacado="+ helpers.BoolToInt(Modificar.Destacado)+", Clasificacion_PIG="+Modificar.ClasificaconPGI+ ", Id_category ="+ Modificar.Categoria.Id+ ", Id_developer="+ Modificar.Developer.ID + ", Launch_Date = '" + Modificar.LaunchDate.Year + "-" + Modificar.LaunchDate.Month + "-" + Modificar.LaunchDate.Day+"' where Id=" + Modificar.ID);
                 datos.setearParametros("@Id", Modificar.ID);
                 datos.setearParametros("@name", Modificar.Name);
                 datos.setearParametros("@Description", Modificar.Description);
                 datos.setearParametros("@Requerimientos", Modificar.Requerimentos);
                 datos.setearParametros("@Price", Modificar.Price);
                 datos.setearParametros("@Descuento", Modificar.Descuento);
-                datos.setearParametros("@PDestacado", BoolToInt(Modificar.Destacado) );
+                datos.setearParametros("@PDestacado", helpers.BoolToInt(Modificar.Destacado) );
                 datos.setearParametros("@Clasificacon_PGI", Modificar.ClasificaconPGI);
                 datos.setearParametros("@IdCategoria", Modificar.Categoria.Id);
                 datos.setearParametros("@IdDeveloper", Modificar.Developer.ID);
@@ -303,16 +305,6 @@ namespace Negocio
             {
                 throw ex;
             }
-        }
-
-        public int BoolToInt(bool value)
-        {
-            int OutValue=0;
-            if (value)
-            {
-                OutValue = 1;
-            }
-            return OutValue;
         }
 
     }

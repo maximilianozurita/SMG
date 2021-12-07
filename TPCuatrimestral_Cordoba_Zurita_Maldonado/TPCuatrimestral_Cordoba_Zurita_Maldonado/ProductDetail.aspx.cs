@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocio;
+using Conexion_BD;
 using Mod_Dominio;
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
@@ -13,14 +13,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         public VideoGame videogame = new VideoGame();
         public List <Imagen> imagen = new List <Imagen>();
         public List<VideoGame> ListaVJuegos = new List<VideoGame>();
-        int aux = 0;
         VGameNegocio vGame = new VGameNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
 
     
             int ProductoID = int.Parse(Request.QueryString["ID"]);
-           /// if (
+
                 videogame = vGame.FindByPK(ProductoID);
            
                 ListaVJuegos.Add(videogame);
