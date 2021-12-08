@@ -37,12 +37,16 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            CarritoNegocio carriNeg = new CarritoNegocio();
+            carriNeg.eliminarCarrito();
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
 
         protected void btnCerrar_Click(object sender, EventArgs e)
         {
+            CarritoNegocio carriNeg = new CarritoNegocio();
+            carriNeg.eliminarCarrito();
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }

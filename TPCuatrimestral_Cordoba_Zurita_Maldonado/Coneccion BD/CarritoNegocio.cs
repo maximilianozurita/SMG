@@ -14,7 +14,7 @@ namespace Conexion_BD
 
             try
             {
-                datos.SetearConsulta("insert into Carrito (Id_user,Id_Product, Price) values ('" + nuevo.IdUsuario + "','" + nuevo.IdProducto + "','" + nuevo.Precio + "')");                
+                datos.SetearConsulta("insert into Carrito (Id_user,Id_Product, Price) values ('" + nuevo.IdUsuario + "','" + nuevo.IdProducto + "','" + nuevo.Precio + "')");
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -35,7 +35,7 @@ namespace Conexion_BD
 
             try
             {
-                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user="+IdUser+" and Id_venta is null");
+                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user=" + IdUser + " and Id_venta is null");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -76,6 +76,28 @@ namespace Conexion_BD
             {
                 throw ex;
             }
+        }
+
+        public void eliminarCarrito()
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.SetearConsulta("DELETE FROM carrito WHERE Id_venta is null");
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
+
         }
     }
 }
