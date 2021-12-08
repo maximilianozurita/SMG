@@ -64,6 +64,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 videogame.Name = inputNombre.Text;
                 videogame.Description = inputDescripcion.Text;
                 videogame.Requerimentos = inputRequerimiento.Text;
+                videogame.LinkVideo = inputLinkVideo.Text;
                 videogame.ClasificaconPGI = int.Parse(inputClasificacion.Text);
                 videogame.Price = (float)decimal.Parse(inputPrecio.Text);
                 videogame.Descuento = (float)decimal.Parse(inputDescuento.Text);

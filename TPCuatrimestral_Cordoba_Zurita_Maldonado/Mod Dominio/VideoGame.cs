@@ -24,6 +24,7 @@ namespace Mod_Dominio
         public bool Destacado { get; set; }
         public int ClasificaconPGI { get; set; }
         public DateTime LaunchDate { get; set; }
+        public string LinkVideo { get; set; }
         public bool Estado { get; set; }
 
     }
