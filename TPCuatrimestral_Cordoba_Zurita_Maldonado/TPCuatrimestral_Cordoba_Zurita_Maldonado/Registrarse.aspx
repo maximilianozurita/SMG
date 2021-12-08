@@ -77,7 +77,7 @@
         <%else
             { %>
 
-        <asp:Button Text="Crear Cuenta" CssClass="btn btn-primary" ID="btnCrearCuenta" OnClientClick="return validar()"  OnClick="btnCrearCuenta_Click" runat="server" />
+        <asp:Button Text="Crear Cuenta" CssClass="btn btn-primary" ID="btnCrearCuenta" OnClientClick="return validar()" OnClick="btnCrearCuenta_Click" runat="server" />
 
         <%} %>
     </div>
