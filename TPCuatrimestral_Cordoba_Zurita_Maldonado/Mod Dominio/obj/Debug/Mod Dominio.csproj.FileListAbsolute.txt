@@ -28,3 +28,9 @@ C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.dll
 C:\Users\User\OneDrive\Escritorio\SMG2\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.pdb
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\bin\Debug\Mod Dominio.dll
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\bin\Debug\Mod Dominio.pdb
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.csproj.AssemblyReference.cache
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.csproj.CoreCompileInputs.cache
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.dll
+D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\Mod Dominio\obj\Debug\Mod Dominio.pdb

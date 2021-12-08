@@ -18,9 +18,10 @@
             </div>
 
             <% if (txtEmail.Text != "")
-               {
+                {
                     Mod_Dominio.Usuario user = new Mod_Dominio.Usuario();
-                    Negocio.UsuarioNegocio userNeg = new Negocio.UsuarioNegocio();
+
+                    Conexion_BD.UsuarioNegocio userNeg = new Conexion_BD.UsuarioNegocio();
                     user = userNeg.Loguear(txtEmail.Text);
 
                     if (user == null)

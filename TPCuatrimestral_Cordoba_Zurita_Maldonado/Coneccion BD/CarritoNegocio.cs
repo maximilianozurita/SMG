@@ -6,43 +6,78 @@ using System.Threading.Tasks;
 using Mod_Dominio;
 namespace Conexion_BD
 {
-    //public class CarritoNegocio
-    //{
-    //    public int Agregar(VideoGame nuevo)
-    //    {
-    //        AccesoDatos datos = new AccesoDatos();
+    public class CarritoNegocio
+    {
+        public void Agregar(Carrito nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
-            //try
-            //{
-                //datos.SetearConsulta("insert into Carrito (idUsuario,idProducto,idventas) output inserted.ID values ('" + nuevo.Name + "','" + nuevo.Description + "','" + nuevo.Requerimentos + "'," + nuevo.Categoria.Id + "," + nuevo.Developer.ID + "," + nuevo.Price + "," + nuevo.Descuento + "," + BoolToInt(nuevo.Destacado) + "," + nuevo.ClasificaconPGI + ",'" + nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day + "');");
+            try
+            {
+                datos.SetearConsulta("insert into Carrito (Id_user,Id_Product, Price) values ('" + nuevo.IdUsuario + "','" + nuevo.IdProducto + "','" + nuevo.Precio + "')");                
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
 
-                //datos.setearParametros("@Id", nuevo.ID);
-                //datos.setearParametros("@Nombre", nuevo.Name);
-                //datos.setearParametros("@Descripcion", nuevo.Description);
-                //datos.setearParametros("@Requerimentos", nuevo.Requerimentos);
-                //datos.setearParametros("@Precio", nuevo.Price);
-                //datos.setearParametros("@Descuento", nuevo.Descuento);
-                ////datos.setearParametros("@PDestacado", BoolToInt(nuevo.Destacado));
-                //datos.setearParametros("@Clasificacon_PGI", nuevo.ClasificaconPGI);
-                //datos.setearParametros("@IdCategoria", nuevo.Categoria.Id);
-                //datos.setearParametros("@IdDeveloper", nuevo.Developer.ID);
-                //datos.setearParametros("@LaunchDate", nuevo.LaunchDate.Year + "-" + nuevo.LaunchDate.Month + "-" + nuevo.LaunchDate.Day);
-                //datos.EjecutarLectura();
-                //datos.Lector.Read();
+        public List<Carrito> ListarCarrito(int IdUser)
+        {
+            List<Carrito> ListaCarrito = new List<Carrito>();
+            AccesoDatos datos = new AccesoDatos();
+            Carrito carri = new Carrito();
 
-    //            return (int)datos.Lector["ID"];
+            try
+            {
+                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user="+IdUser+" and Id_venta is null");
+                datos.EjecutarLectura();
 
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            throw ex;
-    //        }
-    //        finally
-    //        {
-    //            datos.CerrarConexion();
-    //        }
-    //    }
-    //}
+                while (datos.Lector.Read())
+                {
+                    carri = Asignacion(datos);
+
+                    ListaCarrito.Add(carri);
+                }
+
+                return ListaCarrito;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public Carrito Asignacion(AccesoDatos datos)
+        {
+            try
+            {
+                Carrito aux = new Carrito();
+                aux.ID = (int)datos.Lector["Id"];
+                aux.IdProducto = (int)datos.Lector["Id_Product"];
+                aux.IdUsuario = (int)datos.Lector["Id_user"];
+                aux.Precio = (float)(decimal)datos.Lector["Price"];
+
+
+                if (!(datos.Lector["Id_venta"] is DBNull))
+                {
+                    aux.IdVenta = (int)datos.Lector["Id_venta"];
+                }
+
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 }
 
 
