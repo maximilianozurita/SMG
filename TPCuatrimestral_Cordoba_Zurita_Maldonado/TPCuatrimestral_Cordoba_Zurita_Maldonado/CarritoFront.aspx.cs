@@ -12,21 +12,33 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     public partial class CarritoFront : System.Web.UI.Page
     {
      
-        public List<Carrito> ListaCarrito = new List<Carrito>() ;
-        public List<VideoGame> ListaJuegos { get; set; } 
+        public List<Imagen> ListaImagenes = new List<Imagen>() ;
+        public List<VideoGame> LJuegosAgregados = new List<VideoGame>(); 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            VGameNegocio auxcarNeg = new VGameNegocio();
+            Usuario user = new Usuario();
+            UsuarioNegocio userNeg = new UsuarioNegocio();
+            Carrito carri = new Carrito();
             CarritoNegocio carNeg = new CarritoNegocio();
-            int id_usu =Session["email"]!=null? ((LoginUsuario)Session["email"]).ID : -1;
-            ListaCarrito = carNeg.Buscar_Xid(id_usu);
-            foreach(var item in ListaCarrito)
+            List<Carrito> carriList = new List<Carrito>();
+            VGameNegocio vGame = new VGameNegocio();
+
+            string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
+            user = userNeg.Loguear(usuario);
+            int IdUsuario = user.ID;
+
+            carriList = carNeg.ListarCarrito(IdUsuario);
+
+            foreach (var item in carriList)
             {
-                ListaJuegos.Add(auxcarNeg.FindByPK(item.id_producto));
+                LJuegosAgregados.Add(vGame.FindByPK(item.IdProducto));
             }
-          
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
