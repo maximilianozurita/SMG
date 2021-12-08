@@ -45,6 +45,11 @@
                     <span id="errorRequerimiento" class="alert-danger d-flex align-items-center"></span>
                 </div>
                 <div class="col-12">
+                    <label for="input" class="form-label">Link de video</label>
+                    <asp:TextBox runat="server" type="text" CssClass="form-control" ClientIDMode="Static" ID="inputLinkVideo"></asp:TextBox>
+                    <span id="errorLinkVideo" class="alert-danger d-flex align-items-center"></span>
+                </div>
+                <div class="col-12">
                     <label for="input" class="form-label">Clasificación</label>
                     <asp:TextBox runat="server" type="number" min="0" max="18" CssClass="form-control" ClientIDMode="Static" ID="inputClasificacion"></asp:TextBox>
                     <span id="errorClasificacion" class="alert-danger d-flex align-items-center"></span>
@@ -92,6 +97,7 @@
         var inputNombre = document.getElementById("inputNombre");
         var inputDescripcion = document.getElementById("inputDescripcion");
         var inputRequerimiento = document.getElementById("inputRequerimiento");
+        var inputLinkVideo = document.getElementById("inputLinkVideo");
         var inputClasificacion = document.getElementById("inputClasificacion");
         var inputPrecio = document.getElementById("inputPrecio");
         var inputDescuento = document.getElementById("inputDescuento");
@@ -100,6 +106,7 @@
         let errorName = document.getElementById("errorName");
         let errorDescription = document.getElementById("errorDescription");
         let errorRequerimiento = document.getElementById("errorRequerimiento");
+        let errorLinkVideo = document.getElementById("errorLinkVideo");
         let errorClasificacion = document.getElementById("errorClasificacion");
         let errorPrecio = document.getElementById("errorPrecio");
         let errorDescuento = document.getElementById("errorDescuento");
@@ -109,6 +116,7 @@
             errorName,
             errorDescription,
             errorRequerimiento,
+            errorLinkVideo,
             errorClasificacion,
             errorPrecio,
             errorDescuento,
@@ -151,6 +159,11 @@
             }
             if (inputRequerimiento.value === "") {
                 errorRequerimiento.innerHTML = "Ingrese los requerimientos del videojuego"
+
+                hasError = true;
+            }
+            if (inputLinkVideo.value === "") {
+                errorLinkVideo.innerHTML = "Ingrese los un link de video del videojuego"
 
                 hasError = true;
             }

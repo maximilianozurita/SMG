@@ -117,14 +117,14 @@ namespace Conexion_BD
                                 item.SaveAs(System.Web.HttpContext.Current.Server.MapPath("~/images/product/") + filename + extension);
                                 imagen.urlImagen = filename + extension;
 
-                                string OldNameImagen =OldListImagen.Count==i+1? OldListImagen[i].urlImagen: "";
+                                string OldNameImagen =OldListImagen.Count>=i+1? OldListImagen[i].urlImagen: "";
                                 string Rute = System.Web.HttpContext.Current.Server.MapPath("~/images/product/") + OldNameImagen;
                                 if (File.Exists(Rute))
                                 {
                                     File.Delete(Rute);
                                 }
 
-                                imagen.ID = OldListImagen.Count == i + 1 ? OldListImagen[i].ID: 0;
+                                imagen.ID = OldListImagen.Count >= i + 1 ? OldListImagen[i].ID: 0;
                                 if (imagen.ID == 0)
                                 {
                                     imagenNegocio.Agregar(imagen);

@@ -29,7 +29,7 @@
                 %>
 
                 <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="carousel-item <%= i==0?"active":"" %>">
-                    <img src="/images/product/<%=item.Imagen[0].urlImagen %>" class="d-block w-100" alt="...">
+                    <img src="/images/product/<%=item.Imagen.Count>=1? item.Imagen[0].urlImagen:"Default.png"%>" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5><%=item.Name %></h5>
                         <p><%=item.Description%></p>
@@ -60,7 +60,7 @@
                 {%>
             <div class="col-lg-4">
                 <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="card mx-2 text-decoration-none text-reset">
-                    <img src="/images/product/<%=item.Imagen[0].urlImagen %>" class="card-img-top" alt="..">
+                    <img src="/images/product/<%=item.Imagen.Count>=1? item.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
                     <div class="card-body">
                         <h5 class="card-title"><%=item.Name %></h5>
                         <p class="card-text"><%=item.Description %></p>
@@ -86,7 +86,7 @@
                 {%>
             <div class="col-lg-4">
                 <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="card mx-2 text-decoration-none text-reset">
-                    <img src="/images/product/<%=item.Imagen[0].urlImagen %>" class="card-img-top" alt="..">
+                    <img src="/images/product/<%=item.Imagen.Count>=1? item.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
                     <div class="card-body">
                         <h5 class="card-title"><%=item.Name %></h5>
                         <p class="card-text"><%=item.Description %></p>

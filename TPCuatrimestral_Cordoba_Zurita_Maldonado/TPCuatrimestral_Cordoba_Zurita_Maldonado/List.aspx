@@ -26,7 +26,7 @@
 
                     <div class="col-lg-4">
                         <a href="/ProductDetail.aspx?id=<%=item.ID %>" class="card mx-2 mb-4 text-decoration-none text-reset">
-                            <img src="/images/product/<%=item.Imagen[0].urlImagen %>" class="card-img-top" alt="..">
+                            <img src="/images/product/<%=item.Imagen.Count>=1? item.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
                             <div class="card-body">
                                 <h5 class="card-title"><%=item.Name %></h5>
                                 <p class="card-text"><%=item.Description %></p>
