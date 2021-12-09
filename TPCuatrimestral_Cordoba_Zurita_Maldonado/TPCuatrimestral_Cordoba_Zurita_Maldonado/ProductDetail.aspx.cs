@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Conexion_BD;
 using Mod_Dominio;
+
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
     public partial class Detalle_de_producto : System.Web.UI.Page
@@ -14,10 +15,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         public List <Imagen> imagen = new List <Imagen>();
         public List<VideoGame> ListaVJuegos = new List<VideoGame>();
         VGameNegocio vGame = new VGameNegocio();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-    
             int ProductoID = int.Parse(Request.QueryString["ID"]);
 
                 videogame = vGame.FindByPK(ProductoID);
@@ -37,11 +37,28 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         protected void BtnAgregarCarro_Click(object sender, EventArgs e)
 
         {
-            ListaVJuegos.Add(videogame);
+            Carrito carri = new Carrito();
+            CarritoNegocio carriNeg = new CarritoNegocio();
+            Usuario user = new Usuario();
+            UsuarioNegocio userNeg = new UsuarioNegocio();
+            float precioTotal = 0;
 
-            Session.Add("JuegosAgregados", ListaVJuegos);
-           
-            Response.Redirect("Carrito.aspx",false);
+            int ProductoID = int.Parse(Request.QueryString["ID"]);
+            videogame = vGame.FindByPK(ProductoID);
+
+            string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
+            user = userNeg.Loguear(usuario);
+
+
+            carri.IdProducto = videogame.ID;
+            carri.IdUsuario = user.ID;
+            carri.Precio = videogame.Price;
+
+            precioTotal += videogame.Price;
+
+            carriNeg.Agregar(carri);
+
+            Response.Redirect("CarritoFront.aspx",false);
         }
     }
 }

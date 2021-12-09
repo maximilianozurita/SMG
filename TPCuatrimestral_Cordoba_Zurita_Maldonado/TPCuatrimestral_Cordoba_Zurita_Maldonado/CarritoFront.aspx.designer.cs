@@ -11,7 +11,16 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
 
 
-    public partial class Carrito
+    public partial class CarritoFront
     {
+
+        /// <summary>
+        /// Control btnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
     }
 }

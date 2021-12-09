@@ -4,15 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Mod_Dominio;
 using Conexion_BD;
+using Mod_Dominio;
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
-    public partial class Datos_Personales : System.Web.UI.Page
+    public partial class CarritoFront : System.Web.UI.Page
     {
-        public List<Imagen> ListaImagenes = new List<Imagen>();
-        public List<VideoGame> LJuegosAgregados = new List<VideoGame>();
+     
+        public List<Imagen> ListaImagenes = new List<Imagen>() ;
+        public List<VideoGame> LJuegosAgregados = new List<VideoGame>(); 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
@@ -34,9 +36,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             }
         }
 
-        protected void btnContinuar_Click(object sender, EventArgs e)
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("Medio de Pago.aspx");
+            
         }
     }
 }

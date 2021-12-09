@@ -1,79 +1,136 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Datos Personales.aspx.cs" Inherits="TPCuatrimestral_Cordoba_Zurita_Maldonado.Datos_Personales" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    <h5 class="d-flex justify-content-center">DATOS DE CONTACTO</h5>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Pais</option>
+                        <option value="one">Argentina</option>
+                        <option value="two">Uruguay</option>
+                        <option value="three">Chile</option>
+                    </select>
+
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
+                    <span id="errorNombre" class="alert-danger d-flex align-items-center"></span>
+
+                    <label for="txtApellido" class="form-label">Apellido</label>
+                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtApellido" CssClass="form-control" />
+                    <span id="errorApellido" class="alert-danger d-flex align-items-center" ></span>
+
+                    <label for="txtDni" class="form-label">Dni</label>
+                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDni" CssClass="form-control" />
+                    <span id="errorDni" class="alert-danger d-flex align-items-center"></span>
+
+                    <label for="txtCelular" class="form-label">Celular</label>
+                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtCelular" CssClass="form-control" />
+                    <span id="errorCelular" class="alert-danger d-flex align-items-center"></span>
+
+                    <label for="txtEmail" class="form-label">Email</label>
+                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtEmail" CssClass="form-control" />
+                    <span id="errorEmail" class="alert-danger d-flex align-items-center"></span>
+
+                </div>
+                <div class="col">
+                    <h5 class="d-flex justify-content-center">TU COMPRA</h5>
+                    <% foreach (var item2 in LJuegosAgregados)
+                       {%>
+                    <div class="card mb-3 " style="max-width: 800px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="/images/product/<%=item2.Imagen.Count>=1? item2.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
+                            </div>
+                            <div class="col-md-8">
+
+                                <div class="card-body">
+
+                                    <a href="ProductDetail.aspx?id=<%=item2.ID %>" class="text-primary"><%=item2.Name%></a>
+                                    <p class="card-text"><%=item2.Description %></p>
+                                    <p class="card-text"><%="Precio: $" %><%=item2.Price %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <br />
+    <div class="d-grid gap-2">
+        <asp:Button Text="Continuar" CssClass="btn btn-primary" ID="btnContinuar" OnClientClick="return validar()" OnClick="btnContinuar_Click" runat="server" />
+    </div>
+
     <script>
-        function validar()
-        {
-            var Nombre = document.getElementById("textNombre").value;
-            var Apellido = document.getElementById("textApellido").value;
-            var Telefono = document.getElementById("textTelefono").value;
-            var DNI = document.getElementById("DNI").value;
-            if (Nombre === "" || Apellido === "" || Telefono === "" || DNI === "")
-            {
-                alert("Los datos de la persona que pagara deben estar completos. Gracias!");
+        var txtNombre = document.getElementById("txtNombre");
+        var txtApellido = document.getElementById("txtApellido");
+        var txtDni = document.getElementById("txtDni");
+        var txtCelular = document.getElementById("txtCelular");
+        var txtEmail = document.getElementById("txtEmail");
+
+        let errorNombre = document.getElementById("errorNombre");
+        let errorApellido = document.getElementById("errorApellido");
+        let errorDni = document.getElementById("errorDni");
+        let errorCelular = document.getElementById("errorCelular");
+        let errorEmail = document.getElementById("errorEmail");
+
+        let errorArray = [
+            errorNombre,
+            errorApellido,
+            errorDni,
+            errorCelular,
+            errorEmail
+        ];
+
+        function resetError() {
+            errorArray.forEach(error => {
+                error.innerHTML = ""
+            });
+        }
+
+        function isNumeric(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+
+        function validar() {
+
+            resetError()
+
+            let hasError = false;
+            if (txtNombre.value === "") {
+                errorNombre.innerHTML = "Ingrese su nombre por favor"
+                hasError = true;
+            }
+            if (txtApellido.value === "") {
+                errorApellido.innerHTML = "Ingrese su apellido por favor"
+                hasError = true;
+            }
+            if (txtDni.value === "") {
+                errorDni.innerHTML = "Ingrese su DNI"
+                hasError = true;
+            } else if (!isNumeric(txtDni.vlue)) {
+                errorDni.innerHTML = "Solo ingrese valores numericos"
+                hasError = true;
+            }
+            if (txtCelular.value === "") {
+                errorCelular.innerHTML = "Ingrese su numero de celular"
+                hasError = true;
+            } else if (!isNumeric(txtCelular.value)) {
+                errorCelular.innerHTML = "Solo ingrese valores numericos"
+                hasError = true;
+            }
+            if (txtEmail.value === "") {
+                errorEmail.innerHTML = "Debe ingresar un Email"
+                hasError = true;
+            }
+            if (hasError) {
                 return false;
             }
-            return true;
         }
     </script>
-    <div class="conteiner p-4 ">
-        <h5 class="d-flex justify-content-center"> DATOS DE CONTACTO</h5>
-      <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-</div>
-        </div>
-
-    <div class="conteiner">
-        <h5 class="d-flex justify-content-center"> ENTREGA</h5>
-        <div class="form-check border border-ligth">
-             <div >
-                 <h6 class="p-2">Envio a Domicilio</h6>
-                 <div class="shadow p-3 mb-5 bg-white rounded">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
- A Coordinar
-  </label>
-                     </div>
-            </div>
-
-            <div>
-                <h6 class="p-2">Retirar por</h6>
-                <div class="shadow p-3 mb-5 bg-white rounded">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">Gratis</label>
-                <p>Retiras por Local Tu mama me mima (CAZON 6897)</p>
-                <p class="text-secondary">lunes a viernes de 7am a 8am</p>
-                    </div>
-            </div>
-        </div>
-</div>
-
-     <div class="conteiner p-4 ">
-        <h5 class="d-flex justify-content-center"> DATOS DE FACTURACION</h5>
-  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  <option selected>Pais</option>
-  <option value="one">Argentina</option>
-  <option value="two">Uruguay</option>
-  <option value="three">Chile</option>
-</select>
-     </div>
-
-    <div>
-    <h6>Persona que Pagara</h6>
-           <div class="p-2">
-  <input ID="DNI" type="text" class="form-control p-2 m-3" placeholder="DNI" aria-label="DNI" aria-describedby="basic-addon1">
-  <input ID ="textNombre" type="text" class="form-control p-2 m-3" ClientIdMode="static" placeholder="Nombre" aria-label="Nombre">
-  <input  ID ="textApellido" type="text" class="form-control p-2 m-3"  placeholder="Apellido" aria-label="Apellido">
-  <input  ID="textTelefono" type="text" class="form-control p-2 m-3" placeholder="Telefono" aria-label="Telefono">
-    </div>
-        
-</div>
-    
-    <asp:Button ID="btnContinuar" OnClientClick="return validar()" Onclick="btnContinuar_Click" class="btn btn-primary" runat="server" Text="Continuar" />
 
 </asp:Content>
