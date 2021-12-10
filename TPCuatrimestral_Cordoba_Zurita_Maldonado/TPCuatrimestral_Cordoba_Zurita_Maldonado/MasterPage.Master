@@ -23,35 +23,37 @@
 
                     <%--<a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar sesion</a>
                     <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Registrase</a>--%>
-
-                    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
-                        { %>
-                    <a href="/Ventas.aspx" type="button" class="btn btn-outline-primary">Historial de ventas</a>
-                    <a href="/ListOfUser.aspx" type="button" class="btn btn-outline-primary">Lista de usuarios</a>
-                    <a href="/ListOfProduct.aspx" type="button" class="btn btn-outline-primary">Lista de productos</a>
-                    <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
-                    <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" />
-
-                    <%} %>
-                    <%else
-                        {%>
-                    <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Normal)
-                        { %>
-
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        
+                        <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
+                            { %>
+                        <a href="/CarritoFront.aspx" type="button" class="btn btn-outline-primary">Carrito de compras</a>
+                        <a href="/Ventas.aspx" type="button" class="btn btn-outline-primary">Historial de ventas</a>
+                        <a href="/ListOfUser.aspx" type="button" class="btn btn-outline-primary">Lista de usuarios</a>
+                        <a href="/ListOfProduct.aspx" type="button" class="btn btn-outline-primary">Lista de productos</a>
+                        <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
+                        <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" runat="server" />
+
+                        <%} %>
+                        <%else
+                            {%>
+                        <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Normal)
+                            { %>
+
+                        <a href="/CarritoFront.aspx" type="button" class="btn btn-outline-primary">Carrito de compras</a>
                         <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
                         <asp:Button Text="Cerrar sesion" CssClass="btn btn-outline-primary" ID="btnCerrar" OnClick="btnCerrar_Click" runat="server" />
-                    </div>
-                    <%} %>
-                    <%else
-                        { %>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+                        <%} %>
+                        <%else
+                            { %>
+
                         <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar sesion</a>
                         <a href="Registrarse.aspx" type="button" class="btn btn-outline-primary">Registrarse</a>
+
+                        <%} %>
+                        <%} %>
                     </div>
-                    <%} %>
-                    <%} %>
-                    
                 </div>
             </div>
 
@@ -62,10 +64,10 @@
                 </button>
                 <div class="container-xl justify-content-center">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="d-flex col-4">
-                                <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control me-2" aria-label="Search" />
-                                <asp:Button Text="Search" CssClass="btn btn-outline-success" ID="btnSearch" OnClick="btnSearchClick" runat="server" />
-                            </div>
+                        <div class="d-flex col-4">
+                            <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control me-2" aria-label="Search" />
+                            <asp:Button Text="Search" CssClass="btn btn-outline-success" ID="btnSearch" OnClick="btnSearchClick" runat="server" />
+                        </div>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-content-center">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="/" runat="server">Home</a>

@@ -36,15 +36,25 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         protected void btnContinuar_Click(object sender, EventArgs e)
         {
+            CarritoNegocio carNeg = new CarritoNegocio();
+            List<Carrito> carriList = new List<Carrito>();
+
             int IdVenta;
             Usuario user = new Usuario();
             UsuarioNegocio userNeg = new UsuarioNegocio();
             Venta vent = new Venta();
             VentaNegocio ventNeg = new VentaNegocio();
+            
             string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
             user = userNeg.Loguear(usuario);
             int IdUsuario = user.ID;
+            carriList = carNeg.ListarCarrito(IdUsuario);
             float suma = 0;
+
+            foreach(var item in carriList)
+            {
+                suma += item.Precio;
+            }
 
             vent.Id_user = IdUsuario;
             vent.Suma = suma;

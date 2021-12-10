@@ -5,7 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class="container">
+
+    <div class="container w-50">
+        <h1>Detalle de venta</h1>
+
         <%foreach (var item in ListaVideogames)
             { %>
         <div class="card mb-3" style="max-width: 540px;">

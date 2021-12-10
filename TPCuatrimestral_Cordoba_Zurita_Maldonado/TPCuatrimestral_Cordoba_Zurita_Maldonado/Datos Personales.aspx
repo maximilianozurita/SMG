@@ -56,7 +56,7 @@
     </div>
     <br />
     <div class="d-grid gap-2">
-        <asp:Button Text="Continuar" CssClass="btn btn-primary" ID="btnContinuar" OnClientClick="return validar()" OnClick="btnContinuar_Click" runat="server" />
+        <asp:Button Text="Comprar" CssClass="btn btn-primary" ID="btnContinuar" OnClientClick="return validar()" OnClick="btnContinuar_Click" runat="server" />
     </div>
 
     <script>

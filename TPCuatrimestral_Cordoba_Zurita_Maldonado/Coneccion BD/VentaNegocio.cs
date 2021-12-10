@@ -71,7 +71,7 @@ namespace Conexion_BD
 
             try
             {
-                datos.SetearConsulta("insert into videoGames (Id_user, suma) output inserted.ID values (" + nuevo.Id_user + "," + nuevo.Suma + ");");
+                datos.SetearConsulta("insert into ventas (Id_user, suma) output inserted.ID values (" + nuevo.Id_user + "," + nuevo.Suma + ");");
                 datos.setearParametros("@Id", nuevo.Id);
                 datos.setearParametros("@Id_user", nuevo.Id_user);
                 datos.setearParametros("@Nombre", nuevo.Suma);

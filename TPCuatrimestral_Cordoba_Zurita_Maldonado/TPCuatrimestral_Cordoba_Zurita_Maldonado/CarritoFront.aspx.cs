@@ -34,7 +34,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
                 CheckBoxList.DataValueField = "Id";
                 CheckBoxList.DataBind();
             }
-
+             
 
             carriList = carNeg.ListarCarrito(IdUsuario);
 
