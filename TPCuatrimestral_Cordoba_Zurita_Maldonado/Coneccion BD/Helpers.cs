@@ -171,7 +171,7 @@ namespace Conexion_BD
                     }
                     catch (Exception ex)
                     {
-                        //alerta con ex
+                        throw ex;
                     }
                 }
             }

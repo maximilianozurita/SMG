@@ -36,7 +36,29 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         protected void btnContinuar_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("Medio de Pago.aspx");
+            int IdVenta;
+            Usuario user = new Usuario();
+            UsuarioNegocio userNeg = new UsuarioNegocio();
+            Venta vent = new Venta();
+            VentaNegocio ventNeg = new VentaNegocio();
+            string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
+            user = userNeg.Loguear(usuario);
+            int IdUsuario = user.ID;
+            float suma = 0;
+
+            vent.Id_user = IdUsuario;
+            vent.Suma = suma;
+
+            IdVenta = ventNeg.Agregar(vent);
+
+            Carrito carri = new Carrito();
+            CarritoNegocio carriNeg = new CarritoNegocio();
+
+            carriNeg.Modificar(IdVenta, IdUsuario);
+
+
+
+            Response.Redirect("Default.aspx");
         }
     }
 }

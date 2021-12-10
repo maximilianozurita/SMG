@@ -53,6 +53,30 @@ namespace Conexion_BD
             }
         }
 
+        public List<Carrito> DetalleDeArticulosVendidos(int IdVenta)
+        {
+            List<Carrito> ListaCarrito = new List<Carrito>();
+            AccesoDatos datos = new AccesoDatos();
+            Carrito carri = new Carrito();
+
+            try
+            {
+                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user=" + IdVenta + " and Id_venta is null");
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    carri = Asignacion(datos);
+                    ListaCarrito.Add(carri);
+                }
+                return ListaCarrito;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public Carrito Asignacion(AccesoDatos datos)
         {
             try
@@ -97,6 +121,28 @@ namespace Conexion_BD
                 datos.CerrarConexion();
             }
 
+        }
+
+        public void Modificar(int IdVenta, int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("update carrito set Id_venta="+IdVenta+" where Id_user="+IdUsuario+" and Id_venta is null");
+                //datos.setearParametros("@IdVenta", IdVenta);
+                //datos.setearParametros("@IdUsuario", IdUsuario);
+                
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
         }
     }
 }

@@ -26,7 +26,7 @@
 
                     <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
                         { %>
-
+                    <a href="/Ventas.aspx" type="button" class="btn btn-outline-primary">Historial de ventas</a>
                     <a href="/ListOfUser.aspx" type="button" class="btn btn-outline-primary">Lista de usuarios</a>
                     <a href="/ListOfProduct.aspx" type="button" class="btn btn-outline-primary">Lista de productos</a>
                     <a href="/Registrarse.aspx" type="button" class="btn btn-outline-primary">Mi Cuenta</a>
@@ -51,6 +51,7 @@
                     </div>
                     <%} %>
                     <%} %>
+                    
                 </div>
             </div>
 

@@ -43,26 +43,20 @@
     </div>
 
     <div class=" h-25">
-        <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Admin)
+        <%if ((Session["nombreUsuario"]) != null)
             { %>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
         <a href="/Datos Personales.aspx" type="button" class="btn btn-outline-primary">Iniciar Compra</a>
-        <%} %>
-        <%if ((Session["email"]) != null && ((Mod_Dominio.LoginUsuario)Session["email"]).TipoUsuario == Mod_Dominio.TipoUsuario.Normal)
-            { %>
-
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/Datos Personales.aspx" type="button" class="btn btn-outline-primary">Iniciar Compra</a>
-
-        </div>
-        <%} %>
-        <%else
+                    </div>
+        <%}
+        else
             { %>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar Compra </a>
+            <a href="/Login.aspx" type="button" class="btn btn-outline-primary">Iniciar Compra</a>
         </div>
         <%} %>
     </div>
 
-    </div>
 
 </asp:Content>

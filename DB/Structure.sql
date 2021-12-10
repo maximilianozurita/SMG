@@ -54,6 +54,7 @@ go
 Create table ventas(
 id int not null primary key IDENTITY(1,1),
 Id_user int Foreign key references users(id),
+FechaVenta date default(GETDATE()),
 suma decimal,
 )
 go

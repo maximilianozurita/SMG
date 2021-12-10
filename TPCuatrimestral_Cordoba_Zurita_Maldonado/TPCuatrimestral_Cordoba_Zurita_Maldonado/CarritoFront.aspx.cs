@@ -15,13 +15,13 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
         public List<Imagen> ListaImagenes = new List<Imagen>();
         public List<VideoGame> LJuegosAgregados = new List<VideoGame>();
         public CarritoNegocio carNeg = new CarritoNegocio();
+        public List<Carrito> carriList = new List<Carrito>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
             UsuarioNegocio userNeg = new UsuarioNegocio();
             Carrito carri = new Carrito();
-            List<Carrito> carriList = new List<Carrito>();
             VGameNegocio vGame = new VGameNegocio();
 
             string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";

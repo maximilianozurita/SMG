@@ -8,7 +8,9 @@ namespace Mod_Dominio
 {
     public class Venta
     {
-        public Carrito IdCarrito { get; set; }
+        public int Id { get; set; }
+        public int Id_user { get; set; }
+        public DateTime FechaVenta { get; set; }
         public float Suma { get; set; }
     }
 }

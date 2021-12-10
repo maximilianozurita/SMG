@@ -42,13 +42,6 @@
         <span id="errorContraseña" class="alert-danger d-flex align-items-center"></span>
     </div>
 
-
-    <div class="mb-3">
-        <label for="formFile" class="form-label">Ingrese una foto (opcional)</label>
-        <input class="form-control" type="file" id="formFile">
-    </div>
-
-
     <div class="col-12">
 
         <%if ((Session["NombreUsuario"]) != null)
