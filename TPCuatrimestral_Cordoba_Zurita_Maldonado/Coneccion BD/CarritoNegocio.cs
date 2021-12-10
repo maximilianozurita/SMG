@@ -78,14 +78,14 @@ namespace Conexion_BD
             }
         }
 
-        public void eliminarCarrito()
+        public void EliminarProducto(int IdCarrito)
         {
-
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.SetearConsulta("DELETE FROM carrito WHERE Id_venta is null");
+                datos.SetearConsulta("DELETE FROM carrito WHERE Id="+IdCarrito+" and Id_venta is null");
+                datos.setearParametros("@Id", IdCarrito);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -96,7 +96,6 @@ namespace Conexion_BD
             {
                 datos.CerrarConexion();
             }
-
 
         }
     }

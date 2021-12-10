@@ -12,30 +12,36 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
     public partial class Detalle_de_producto : System.Web.UI.Page
     {
         public VideoGame videogame = new VideoGame();
-        public List <Imagen> imagen = new List <Imagen>();
+        public Image imagen = new Image();
+
         public List<VideoGame> ListaVJuegos = new List<VideoGame>();
+        public List<Imagen> ListaImagenes { get; set; }
+
         VGameNegocio vGame = new VGameNegocio();
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int ProductoID = int.Parse(Request.QueryString["ID"]);
+            ImagenNegocio imagNeg = new ImagenNegocio();
 
-                videogame = vGame.FindByPK(ProductoID);
-           
-                ListaVJuegos.Add(videogame);
 
-            if ( !(Session["JuegosAgregados"] != null )) 
-            {
-                ListaVJuegos.Add(videogame);
+            ListaImagenes = imagNeg.FindByFk(ProductoID); 
 
-                Session.Add( "JuegosAgregados",ListaVJuegos);
-            }
+            videogame = vGame.FindByPK(ProductoID);
+            //ListaVJuegos.Add(videogame);
 
-           
+
+            //if ( !(Session["JuegosAgregados"] != null )) 
+            //{
+            //    ListaVJuegos.Add(videogame);
+
+            //    Session.Add( "JuegosAgregados",ListaVJuegos);
+            //}           
         }
 
         protected void BtnAgregarCarro_Click(object sender, EventArgs e)
-
         {
             Carrito carri = new Carrito();
             CarritoNegocio carriNeg = new CarritoNegocio();

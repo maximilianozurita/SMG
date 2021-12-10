@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Mod_Dominio;
+
 namespace Conexion_BD
 {
     public class ImagenNegocio
@@ -56,7 +57,6 @@ namespace Conexion_BD
                     lista.Add(aux);
                 }
                 return lista;
-
             }
             catch (Exception ex)
             {
