@@ -53,6 +53,30 @@ namespace Conexion_BD
             }
         }
 
+        public List<Carrito> DetalleDeArticulosVendidos(int IdVenta)
+        {
+            List<Carrito> ListaCarrito = new List<Carrito>();
+            AccesoDatos datos = new AccesoDatos();
+            Carrito carri = new Carrito();
+
+            try
+            {
+                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user=" + IdVenta + " and Id_venta is null");
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    carri = Asignacion(datos);
+                    ListaCarrito.Add(carri);
+                }
+                return ListaCarrito;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public Carrito Asignacion(AccesoDatos datos)
         {
             try

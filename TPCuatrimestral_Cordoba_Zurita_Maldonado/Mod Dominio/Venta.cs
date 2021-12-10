@@ -9,7 +9,8 @@ namespace Mod_Dominio
     public class Venta
     {
         public int Id { get; set; }
-        public int id_user { get; set; }
-        public float suma { get; set; }
+        public int Id_user { get; set; }
+        public DateTime FechaVenta { get; set; }
+        public float Suma { get; set; }
     }
 }

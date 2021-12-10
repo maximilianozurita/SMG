@@ -72,6 +72,7 @@
     <Content Include="Datos Personales.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="Ventas.aspx" />
     <Content Include="ListOfProduct.aspx" />
     <Content Include="ListOfUser.aspx" />
     <Content Include="Medio de Pago.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListOfProduct.aspx.cs">
       <DependentUpon>ListOfProduct.aspx</DependentUpon>
