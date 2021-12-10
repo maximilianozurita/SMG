@@ -61,7 +61,7 @@ namespace Conexion_BD
 
             try
             {
-                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_user=" + IdVenta + " and Id_venta is null");
+                datos.SetearConsulta("select Id, Id_user, Id_Product,Price, Id_venta from carrito where Id_venta=" + IdVenta + " and Id_venta is not null");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())

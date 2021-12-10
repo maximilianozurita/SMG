@@ -10,19 +10,17 @@
         <%foreach (var item in ListaVentas)
             { %>
         <div class="list-group list-group-numbered">
-            <a href="#" class="text-decoration-none text-reset ">
+            <a href="/DetalleVenta.aspx?query=<%=item.Id%>" class="text-decoration-none text-reset ">
                 <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
-                        <div class="fw-bold"><%=item.Id_user %></div>
-                        Fecha: 
+                        <div class="fw-bold"><%=item.user.Nombre%> <%=item.user.Apellido %></div>
+                        <p><%=item.user.Email %></p>
+                        Fecha: <%=item.FechaVenta.Day%>/<%=item.FechaVenta.Month%>/<%=item.FechaVenta.Year%>
                     </div>
                     <span class="badge bg-primary rounded-pill">Total: <%=item.Suma %>$</span>
                 </div>
             </a>
         </div>
-
         <%} %>
-
-
     </div>
 </asp:Content>

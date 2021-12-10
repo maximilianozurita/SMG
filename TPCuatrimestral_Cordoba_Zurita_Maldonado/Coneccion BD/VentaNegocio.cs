@@ -16,7 +16,7 @@ namespace Conexion_BD
             Venta aux = new Venta();
             try
             {
-                datos.SetearConsulta("Select id, Id_user, FechaVenta, suma from ventas where id_user=" + Id_user + ";");
+                datos.SetearConsulta("Select v.id, v.Id_user,v.FechaVenta, v.suma, u.name as user_name, u.lastName as user_apellido, u.email as user_email from ventas as v, users as uwhere id_user=" + Id_user + ";");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -44,7 +44,7 @@ namespace Conexion_BD
             Venta aux = new Venta();
             try
             {
-                datos.SetearConsulta("Select id, Id_user,FechaVenta, suma from ventas;");
+                datos.SetearConsulta("Select v.id, v.Id_user,v.FechaVenta, v.suma, u.name as user_name, u.lastName as user_apellido, u.email as user_email from ventas as v, users as u where v.Id_user=u.id;");
                 datos.EjecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -98,8 +98,18 @@ namespace Conexion_BD
                 Venta aux = new Venta();
                 aux.Id = (int)datos.Lector["Id"];
                 aux.Id_user = (int)datos.Lector["Id_user"];
+
+                aux.user = new Usuario
+                {
+                    Nombre = (string)datos.Lector["user_name"],
+                    Apellido=(string)datos.Lector["user_apellido"],
+                    Email=(string)datos.Lector["user_email"],
+                };
+
+
+                
                 aux.FechaVenta = (DateTime)datos.Lector["FechaVenta"];
-                aux.Suma = (int)datos.Lector["suma"];
+                aux.Suma = (float)(decimal)datos.Lector["suma"];
                 return aux;
             }
             catch (Exception ex)
