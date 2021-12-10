@@ -11,22 +11,30 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
     public partial class CarritoFront : System.Web.UI.Page
     {
-     
-        public List<Imagen> ListaImagenes = new List<Imagen>() ;
-        public List<VideoGame> LJuegosAgregados = new List<VideoGame>(); 
+        public bool producto = true;
+        public List<Imagen> ListaImagenes = new List<Imagen>();
+        public List<VideoGame> LJuegosAgregados = new List<VideoGame>();
+        public CarritoNegocio carNeg = new CarritoNegocio();
+        public List<Carrito> carriList = new List<Carrito>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
             UsuarioNegocio userNeg = new UsuarioNegocio();
             Carrito carri = new Carrito();
-            CarritoNegocio carNeg = new CarritoNegocio();
-            List<Carrito> carriList = new List<Carrito>();
             VGameNegocio vGame = new VGameNegocio();
 
             string usuario = Session["NombreUsuario"] != null ? Session["NombreUsuario"].ToString() : "";
             user = userNeg.Loguear(usuario);
             int IdUsuario = user.ID;
+
+            if (!IsPostBack)
+            {
+                CheckBoxList.DataSource = carNeg.ListarCarrito(user.ID);
+                CheckBoxList.DataValueField = "Id";
+                CheckBoxList.DataBind();
+            }
+
 
             carriList = carNeg.ListarCarrito(IdUsuario);
 
@@ -38,7 +46,17 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            int i, id;
+
+            for (i = 0; i < CheckBoxList.Items.Count; i++)
+            {
+                if (CheckBoxList.Items[i].Selected)
+                {
+                    id = int.Parse(CheckBoxList.Items[i].Value);
+                    carNeg.EliminarProducto(id);
+                }
+            }
+            Response.Redirect("CarritoFront.aspx");
         }
     }
 }

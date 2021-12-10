@@ -9,11 +9,8 @@ using Mod_Dominio;
 
 namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
 {
-
-    
     public partial class Historial_de_ventas : System.Web.UI.Page
     {
-
         public List<Venta> ListaVentas { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,9 +22,6 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             }
 
             VentaNegocio VentaNegocios = new VentaNegocio();
-
-            
-
             ListaVentas = VentaNegocios.Listar();
 
         }

@@ -102,14 +102,14 @@ namespace Conexion_BD
             }
         }
 
-        public void eliminarCarrito()
+        public void EliminarProducto(int IdCarrito)
         {
-
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.SetearConsulta("DELETE FROM carrito WHERE Id_venta is null");
+                datos.SetearConsulta("DELETE FROM carrito WHERE Id="+IdCarrito+" and Id_venta is null");
+                datos.setearParametros("@Id", IdCarrito);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
@@ -121,7 +121,28 @@ namespace Conexion_BD
                 datos.CerrarConexion();
             }
 
+        }
 
+        public void Modificar(int IdVenta, int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("update carrito set Id_venta="+IdVenta+" where Id_user="+IdUsuario+" and Id_venta is null");
+                //datos.setearParametros("@IdVenta", IdVenta);
+                //datos.setearParametros("@IdUsuario", IdUsuario);
+                
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
         }
     }
 }

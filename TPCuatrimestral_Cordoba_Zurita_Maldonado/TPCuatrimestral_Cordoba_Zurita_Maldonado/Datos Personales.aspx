@@ -4,86 +4,77 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col">
-                    <h5 class="d-flex justify-content-center">DATOS DE CONTACTO</h5>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Pais</option>
-                        <option value="one">Argentina</option>
-                        <option value="two">Uruguay</option>
-                        <option value="three">Chile</option>
-                    </select>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <h5 class="d-flex justify-content-center">DATOS DE TARJETA</h5>
 
-                    <label for="txtNombre" class="form-label">Nombre</label>
-                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtNombre" CssClass="form-control" />
-                    <span id="errorNombre" class="alert-danger d-flex align-items-center"></span>
+                <label for="txtNombreApellido" class="form-label">Nombre y Apellido</label>
+                <asp:TextBox runat="server" ClientIDMode="Static" ID="txtNombreApellido" CssClass="form-control" />
+                <span id="errorNombreApellido" class="alert-danger d-flex align-items-center"></span>
 
-                    <label for="txtApellido" class="form-label">Apellido</label>
-                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtApellido" CssClass="form-control" />
-                    <span id="errorApellido" class="alert-danger d-flex align-items-center" ></span>
+                <label for="txtNumeroTarjeta" class="form-label">Numero de Tarjeta</label>
+                <asp:TextBox runat="server" ClientIDMode="Static" ID="txtNumeroTarjeta" CssClass="form-control" />
+                <span id="errorNumeroTarjeta" class="alert-danger d-flex align-items-center"></span>
 
-                    <label for="txtDni" class="form-label">Dni</label>
-                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtDni" CssClass="form-control" />
-                    <span id="errorDni" class="alert-danger d-flex align-items-center"></span>
+                <label for="txtCodigoSeguridad" class="form-label">Codigo de Seguridad</label>
+                <asp:TextBox runat="server" ClientIDMode="Static" ID="txtCodigoSeguridad" CssClass="form-control" />
+                <span id="errorCodigoSeguridad" class="alert-danger d-flex align-items-center"></span>
 
-                    <label for="txtCelular" class="form-label">Celular</label>
-                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtCelular" CssClass="form-control" />
-                    <span id="errorCelular" class="alert-danger d-flex align-items-center"></span>
+                <label for="txtVencimiento" class="form-label">Fecha de Vencimiento</label>
+                <asp:TextBox runat="server" type="date" CssClass="form-control" ClientIDMode="Static" ID="txtVencimiento"></asp:TextBox>
+                <span id="errorVencimiento" class="alert-danger d-flex align-items-center"></span>
 
-                    <label for="txtEmail" class="form-label">Email</label>
-                    <asp:TextBox runat="server" ClientIDMode="Static" ID="txtEmail" CssClass="form-control" />
-                    <span id="errorEmail" class="alert-danger d-flex align-items-center"></span>
+            </div>
+            <div class="col">
+                <h5 class="d-flex justify-content-center">TU COMPRA</h5>
 
-                </div>
-                <div class="col">
-                    <h5 class="d-flex justify-content-center">TU COMPRA</h5>
-                    <% foreach (var item2 in LJuegosAgregados)
-                       {%>
-                    <div class="card mb-3 " style="max-width: 800px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <img src="/images/product/<%=item2.Imagen.Count>=1? item2.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
-                            </div>
-                            <div class="col-md-8">
+                <% float precioTotal = 0;
+                    foreach (var item2 in LJuegosAgregados)
+                    {%>
+                <div class="card mb-3 " style="max-width: 800px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="/images/product/<%=item2.Imagen.Count>=1? item2.Imagen[0].urlImagen:"Default.png"%>" class="card-img-top" alt="..">
+                        </div>
+                        <div class="col-md-8">
 
-                                <div class="card-body">
+                            <div class="card-body">
 
-                                    <a href="ProductDetail.aspx?id=<%=item2.ID %>" class="text-primary"><%=item2.Name%></a>
-                                    <p class="card-text"><%=item2.Description %></p>
-                                    <p class="card-text"><%="Precio: $" %><%=item2.Price %></p>
-                                </div>
+                                <a href="ProductDetail.aspx?id=<%=item2.ID %>" class="text-primary"><%=item2.Name%></a>
+                                <p class="card-text"><%=item2.Description %></p>
+                                <p class="card-text"><%="Precio: $" %><%=item2.Price %></p>
+                                <%precioTotal += item2.Price; %>
                             </div>
                         </div>
                     </div>
-                    <% } %>
                 </div>
+                <% } %>
+                <p class="h2">Total: $<%=precioTotal %></p>
             </div>
         </div>
+    </div>
     <br />
     <div class="d-grid gap-2">
         <asp:Button Text="Continuar" CssClass="btn btn-primary" ID="btnContinuar" OnClientClick="return validar()" OnClick="btnContinuar_Click" runat="server" />
     </div>
 
     <script>
-        var txtNombre = document.getElementById("txtNombre");
-        var txtApellido = document.getElementById("txtApellido");
-        var txtDni = document.getElementById("txtDni");
-        var txtCelular = document.getElementById("txtCelular");
-        var txtEmail = document.getElementById("txtEmail");
+        var txtNombreApellido = document.getElementById("txtNombreApellido");
+        var txtNumeroTarjeta = document.getElementById("txtNumeroTarjeta");
+        var txtCodigoSeguridad = document.getElementById("txtCodigoSeguridad");
+        var txtVencimiento = document.getElementById("txtVencimiento");
 
-        let errorNombre = document.getElementById("errorNombre");
-        let errorApellido = document.getElementById("errorApellido");
-        let errorDni = document.getElementById("errorDni");
-        let errorCelular = document.getElementById("errorCelular");
-        let errorEmail = document.getElementById("errorEmail");
+        let errorNombreApellido = document.getElementById("errorNombreApellido");
+        let errorNumeroTarjeta = document.getElementById("errorNumeroTarjeta");
+        let errorCodigoSeguridad = document.getElementById("errorCodigoSeguridad");
+        let errorVencimiento = document.getElementById("errorVencimiento");
 
         let errorArray = [
-            errorNombre,
-            errorApellido,
-            errorDni,
-            errorCelular,
-            errorEmail
+            errorNombreApellido,
+            errorNumeroTarjeta,
+            errorCodigoSeguridad,
+            errorVencimiento
         ];
 
         function resetError() {
@@ -101,30 +92,26 @@
             resetError()
 
             let hasError = false;
-            if (txtNombre.value === "") {
-                errorNombre.innerHTML = "Ingrese su nombre por favor"
+            if (txtNombreApellido.value === "") {
+                errorNombreApellido.innerHTML = "Ingrese su nombre y apellido por favor"
                 hasError = true;
             }
-            if (txtApellido.value === "") {
-                errorApellido.innerHTML = "Ingrese su apellido por favor"
+            if (txtNumeroTarjeta.value === "") {
+                errorNumeroTarjeta.innerHTML = "Ingrese el Numero de Tarjeta"
+                hasError = true;
+            } else if (!isNumeric(txtNumeroTarjeta.value)) {
+                errorNumeroTarjeta.innerHTML = "Solo ingrese valores numericos"
                 hasError = true;
             }
-            if (txtDni.value === "") {
-                errorDni.innerHTML = "Ingrese su DNI"
+            if (txtCodigoSeguridad.value === "") {
+                errorCodigoSeguridad.innerHTML = "Ingrese el Codigo de Seguridad"
                 hasError = true;
-            } else if (!isNumeric(txtDni.vlue)) {
-                errorDni.innerHTML = "Solo ingrese valores numericos"
-                hasError = true;
-            }
-            if (txtCelular.value === "") {
-                errorCelular.innerHTML = "Ingrese su numero de celular"
-                hasError = true;
-            } else if (!isNumeric(txtCelular.value)) {
-                errorCelular.innerHTML = "Solo ingrese valores numericos"
+            } else if (!isNumeric(txtCodigoSeguridad.value)) {
+                errorCodigoSeguridad.innerHTML = "Solo ingrese valores numericos"
                 hasError = true;
             }
-            if (txtEmail.value === "") {
-                errorEmail.innerHTML = "Debe ingresar un Email"
+            if (txtVencimiento.value === "") {
+                errorVencimiento.innerHTML = "Ingrese la fecha de vencimiento de la tarjeta"
                 hasError = true;
             }
             if (hasError) {
