@@ -94,7 +94,8 @@ namespace Conexion_BD
 
                 while (datos.Lector.Read())
                 {
-                    user.ID = (int)datos.Lector["id"];
+                    if (!(datos.Lector["id"] is DBNull))
+                        user.ID = (int)datos.Lector["id"];
                     user.Nombre = (string)datos.Lector["name"];
                     user.Apellido = (string)datos.Lector["lastName"];
                     user.Celular = (string)datos.Lector["cell"];

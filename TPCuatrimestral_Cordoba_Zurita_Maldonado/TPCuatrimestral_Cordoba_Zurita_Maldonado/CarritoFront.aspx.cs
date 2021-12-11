@@ -42,6 +42,7 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             {
                 LJuegosAgregados.Add(vGame.FindByPK(item.IdProducto));
             }
+   
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

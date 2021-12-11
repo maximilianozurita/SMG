@@ -57,9 +57,7 @@ C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\T
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\obj\Debug\TPCuatrimestral_Cordoba_Zurita_Maldonado.csproj.CopyComplete
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\obj\Debug\TPCuatrimestral_Cordoba_Zurita_Maldonado.dll
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\obj\Debug\TPCuatrimestral_Cordoba_Zurita_Maldonado.pdb
-C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Coneccion BD.dll
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Mod Dominio.dll
-C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Coneccion BD.pdb
 C:\Users\User\OneDrive\Escritorio\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Mod Dominio.pdb
 C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\TPCuatrimestral_Cordoba_Zurita_Maldonado.dll.config
 C:\Users\zurit\Documents\GitHub\SMG\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\TPCuatrimestral_Cordoba_Zurita_Maldonado.dll
@@ -496,3 +494,5 @@ D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimest
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Conexion BD.pdb
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Mod Dominio.pdb
 D:\Users\tobio\Desktop\SMG\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\User\OneDrive\Escritorio\Smg\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Conexion BD.dll
+C:\Users\User\OneDrive\Escritorio\Smg\TPCuatrimestral_Cordoba_Zurita_Maldonado\TPCuatrimestral_Cordoba_Zurita_Maldonado\bin\Conexion BD.pdb

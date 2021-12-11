@@ -27,6 +27,9 @@ namespace TPCuatrimestral_Cordoba_Zurita_Maldonado
             ImagenNegocio imagNeg = new ImagenNegocio();
 
 
+
+
+
             ListaImagenes = imagNeg.FindByFk(ProductoID); 
 
             videogame = vGame.FindByPK(ProductoID);
